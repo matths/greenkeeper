@@ -400,13 +400,6 @@ x-usertask:after {
 x-usertask h2 {
   color: #78b63d;
 }
-#btnflame,
-#btncheckin,
-#btncheckout {
-  border: none;
-  background-color: transparent;
-  display: none;
-}
 #btnflame {
   background-image: url("../img/btn-problem.png");
   width: 45px;
@@ -421,4 +414,12 @@ x-usertask h2 {
   background-image: url("../img/btn-checkout.png");
   width: 51px;
   height: 45px;
+}
+#btnflame,
+#btncheckin,
+#btncheckout {
+  border: none;
+  background-color: transparent;
+  display: none;
+  float: right;
 }
