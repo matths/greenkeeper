@@ -22,6 +22,7 @@
   "homepage": "https://github.com/matths/greenkeeper#readme",
   "dependencies": {
     "express": "^4.13.4",
+    "express-users": "^0.3.2",
     "moment": "^2.13.0"
   }
 }
