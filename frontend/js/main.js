@@ -85,8 +85,8 @@ xtag.register('x-app', {
     methods: {
         initialFetch: function () {
             var self = this;
-            $.getJSON("http://127.0.0.1:8000/api.json", function (data) {
-            // $.getJSON("http://lizu.net:5000/stream", function (data) {
+            $.getJSON("http://127.0.0.1:8000/frontend/api.json", function (data) {
+                // $.getJSON("http://lizu.net:5000/stream", function (data) {
                 $.each(data, function (key, value) {
                     var el = $('<x-task></x-task>');
                     el.attr('title', value.title);
@@ -105,25 +105,27 @@ xtag.register('x-app', {
                 self.initSlider(self);
             });
         },
-        initSlider: function(self) {
-            var itemsToShow = $(document).width() > 1024 ? 6 : 4;
-            self.xtag.taskloop.css("height", 0 + "px");
-            var height = $(document).height() - $('header').height() - self.xtag.latesttasks.height() - $('x-app>h2').outerHeight(true);
-            var itemHeight = parseInt((height + 0.5) / itemsToShow);
-            $(">div", self.xtag.taskloop).css("height", itemHeight + "px");
-            $(">div", self.xtag.taskloop).css("overflow", "hidden");
-            height = itemHeight * itemsToShow;
-            self.xtag.taskloop.css("height", height + "px");
-            self.xtag.taskloop.slick({
-                slidesToShow: itemsToShow,
-                slidesToScroll: 1,
-                vertical: true,
-                infinite: true,
-                autoplay: true,
-                autoplaySpeed: 2000,
-                arrows: false,
-                pauseOnHover: false
-            });
+        initSlider: function (self) {
+                var itemsToShow = $(document).width() > 1024 ? 6 : 4;
+                self.xtag.taskloop.css("height", 0 + "px");
+                var height = $(document).height() - $('header').height() - self.xtag.latesttasks.height() - $('x-app>h2').outerHeight(true);
+                var itemHeight = parseInt((height + 0.5) / itemsToShow);
+                $(">div", self.xtag.taskloop).css("height", itemHeight + "px");
+                $(">div", self.xtag.taskloop).css("overflow", "hidden");
+                height = itemHeight * itemsToShow;
+                self.xtag.taskloop.css("height", height + "px");
+            if (typeof self.xtag.taskloop.slick != "undefined") {
+                self.xtag.taskloop.slick({
+                    slidesToShow: itemsToShow,
+                    slidesToScroll: 1,
+                    vertical: true,
+                    infinite: true,
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                    arrows: false,
+                    pauseOnHover: false
+                });
+            }
         }
     }
 });
