@@ -412,6 +412,11 @@ x-usertask h2 {
   width: 45px;
   height: 45px;
 }
+#btnuflame {
+  background-image: url("../img/btn-problem.png");
+  width: 45px;
+  height: 45px;
+}
 #btncheckin {
   background-image: url("../img/btn-checkin.png");
   width: 49px;
@@ -424,7 +429,8 @@ x-usertask h2 {
 }
 #btnflame,
 #btncheckin,
-#btncheckout {
+#btncheckout,
+#btnuflame {
   border: none;
   background-color: transparent;
   display: none;
