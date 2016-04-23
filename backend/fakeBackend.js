@@ -26,7 +26,7 @@ function findTask(id) {
 	return false;
 }
 
-function findTaskForUser(userId) {
+function findStreamitemForUser(userId) {
 	for (var i=0; i<data.stream.length; i++) {
 		var users = data.stream[i].users;
 		if (users) for (var j=0; j<users.length; j++) {
@@ -89,9 +89,9 @@ app.get('/tasks', function(req, res) {
 });
 
 app.get('/currentStreamItem/:userId', function(req, res) {
-	var selectedTask = findTaskForUser(req.params.userId);
-	if (selectedTask) {
-		res.json(selectedTask);
+	var selectedStreamitem = findStreamitemForUser(req.params.userId);
+	if (selectedStreamitem) {
+		res.json(selectedStreamitem);
 	} else {
 		var selectedUser = findUser(req.params.userId);
 		if (selectedUser) {
@@ -114,17 +114,17 @@ app.get('/task/checkin/:taskId', function(req, res) {
 	var selectedTask = findTask(req.params.taskId);
 	if (selectedTask) {
 		createEvent(selectedTask, "checkin" , data.users[0]);
-		res.sendStatus(200);
+		res.redirect('widget.html');
 	} else {
 		res.sendStatus(404);
 	}
 });
 
-app.get('/task/checkout/:taskId', function(req, res) {
-	var selectedTask = findTask(req.params.taskId);
-	if (selectedTask) {
-		createEvent(selectedTask, "checkout" , data.users[0]);
-		res.sendStatus(200);
+app.get('/task/checkout/:userId', function(req, res) {
+	var selectedStreamitem = findStreamitemForUser(req.params.userId);
+	if (selectedStreamitem) {
+		createEvent(selectedStreamitem, "checkout" , data.users[0]);
+		res.redirect('widget.html');
 	} else {
 		res.sendStatus(404);
 	}

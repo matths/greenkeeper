@@ -189,6 +189,8 @@ header {
 }
 header h1 {
   text-transform: uppercase;
+  text-indent: -9999;
+  background: url("../img/logo-widget.png") no-repeat 0 14px;
   color: #78b63d;
   line-height: 60px;
   margin: 0 0 0 20px;
@@ -220,6 +222,11 @@ sidebar.left {
 }
 sidebar.right {
   background-color: #d5dadd;
+}
+sidebar img {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 @media only screen and (min-width: 640px) {
   sidebar {
