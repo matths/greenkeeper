@@ -193,7 +193,7 @@ header h1 {
   background: url("../img/logo-widget.png") no-repeat 0 14px;
   color: #78b63d;
   line-height: 60px;
-  margin: 0 0 0 20px;
+  margin: 0 0 0 70px;
 }
 sidebar {
   *zoom: 1;
@@ -427,12 +427,53 @@ x-usertask h2 {
   width: 51px;
   height: 45px;
 }
+#btnadd,
+#btnmenu,
+#btnsearch {
+  margin: 12px 10px 0 0;
+  background: url("../img/btn-addtask.png") no-repeat;
+  width: 37px;
+  height: 37px;
+}
+#btnflame,
+#btncheckin,
+#btncheckout,
+#btnunflame,
+#btnadd,
+#btnmenu,
+#btnsearch {
+  border: none;
+  background-color: transparent;
+  float: right;
+}
+#btnmenu {
+  margin: 12px 0 0 10px;
+  background: url("../img/btn-menue.png") no-repeat;
+  float: left;
+}
+#btnsearch {
+  background: url("../img/lupe.png") no-repeat;
+}
 #btnflame,
 #btncheckin,
 #btncheckout,
 #btnunflame {
-  border: none;
-  background-color: transparent;
   display: none;
-  float: right;
+}
+x-searchmodal {
+  *zoom: 1;
+  display: block;
+  background-color: #30323d;
+  position: absolute;
+  top: 60px;
+  width: 100%;
+  border-bottom: 1px solid #000;
+}
+x-searchmodal:before,
+x-searchmodal:after {
+  content: '';
+  display: table;
+}
+x-searchmodal:after {
+  clear: both;
 }

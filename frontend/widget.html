@@ -9,8 +9,15 @@
 </head>
 <body>
 <header>
-    <button>+</button>
+    <button id="btnsearch"></button>
+    <button id="btnmenu"></button>
     <h1>Greenkeeper</h1>
+
+    <x-searchmodal>
+        <form action="search">
+            <input type="text" name="searchString"/><input type="submit" value="Suchen"/>
+        </form>
+    </x-searchmodal>
 </header>
 <x-app>
     <x-usertask>

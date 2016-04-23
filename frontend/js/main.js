@@ -135,6 +135,26 @@ xtag.register('x-tasks', {
     }
 });
 
+xtag.register('x-searchmodal', {
+    lifecycle: {
+        created: function () {
+            this.xtag.searchmodal = $(this);
+            this.xtag.searchForm = this.querySelector('form');
+            this.xtag.searchInput = this.querySelector('input');
+            var self = this;
+            $('#btnsearch').click(function() {
+                self.xtag.searchmodal.slideToggle();
+            });
+            $(this.xtag.searchForm).submit(function (e) {
+                e.preventDefault();
+                $.get("http://lizu.net:5000/search/" + $(self.xtag.searchInput).val(), function (data) {
+                    alert(data);
+                });
+            });
+        }
+    }
+});
+
 xtag.register('x-app', {
     lifecycle: {
         created: function () {
