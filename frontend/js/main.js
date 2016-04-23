@@ -105,7 +105,6 @@ xtag.register('x-usertask', {
                 }
                 else if (data.event == "flame") {
                     $('#btnunflame').css('display', 'block');
-                    alert('flame');
                 }
                 else {
                     $('#btncheckout, #btnflame').css('display', 'block');
@@ -130,6 +129,26 @@ xtag.register('x-tasks', {
                     var el = $('<x-task></x-task>');
                     el.get(0).setValues(task);
                     $(self).append(el);
+                });
+            });
+        }
+    }
+});
+
+xtag.register('x-searchmodal', {
+    lifecycle: {
+        created: function () {
+            this.xtag.searchmodal = $(this);
+            this.xtag.searchForm = this.querySelector('form');
+            this.xtag.searchInput = this.querySelector('input');
+            var self = this;
+            $('#btnsearch').click(function() {
+                self.xtag.searchmodal.slideToggle();
+            });
+            $(this.xtag.searchForm).submit(function (e) {
+                e.preventDefault();
+                $.get("http://lizu.net:5000/search/" + $(self.xtag.searchInput).val(), function (data) {
+                    alert(data);
                 });
             });
         }

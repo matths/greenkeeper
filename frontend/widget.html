@@ -9,8 +9,15 @@
 </head>
 <body>
 <header>
-    <button>+</button>
+    <button id="btnsearch"></button>
+    <button id="btnmenu"></button>
     <h1>Greenkeeper</h1>
+
+    <x-searchmodal>
+        <form action="search">
+            <input type="text" name="searchString"/><input type="submit" value="Suchen"/>
+        </form>
+    </x-searchmodal>
 </header>
 <x-app>
     <x-usertask>
@@ -21,7 +28,7 @@
         <a href="tasks.html" class="action" id="btncheckin"></a>
         <a href="/task/checkout/cb5847ff-ee2b-e860-7bdd-e6ce96481e74" class="action" id="btncheckout"></a>
         <a href="/task/flame/cb5847ff-ee2b-e860-7bdd-e6ce96481e74" class="action" id="btnflame"></a>
-        <a href="/task/unflame/cb5847ff-ee2b-e860-7bdd-e6ce96481e74" class="action" id="btnuflame"></a>
+        <a href="/task/unflame/cb5847ff-ee2b-e860-7bdd-e6ce96481e74" class="action" id="btnunflame"></a>
     </x-usertask>
     <x-taskloop></x-taskloop>
 </x-app>
