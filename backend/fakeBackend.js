@@ -114,7 +114,7 @@ app.get('/task/checkin/:taskId', function(req, res) {
 	var selectedTask = findTask(req.params.taskId);
 	if (selectedTask) {
 		createEvent(selectedTask, "checkin" , data.users[0]);
-		res.redirect('widget.html');
+		res.redirect('/widget.html');
 	} else {
 		res.sendStatus(404);
 	}
@@ -124,7 +124,7 @@ app.get('/task/checkout/:userId', function(req, res) {
 	var selectedStreamitem = findStreamitemForUser(req.params.userId);
 	if (selectedStreamitem) {
 		createEvent(selectedStreamitem, "checkout" , data.users[0]);
-		res.redirect('widget.html');
+		res.redirect('/widget.html');
 	} else {
 		res.sendStatus(404);
 	}
