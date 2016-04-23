@@ -148,7 +148,7 @@ xtag.register('x-searchmodal', {
             $(this.xtag.searchForm).submit(function (e) {
                 e.preventDefault();
                 $.get("http://lizu.net:5000/search/" + $(self.xtag.searchInput).val(), function (data) {
-                    alert(data);
+                    $('x-app').get(0).xtag.app.fillTasks(data);
                 });
             });
         }
@@ -158,6 +158,7 @@ xtag.register('x-searchmodal', {
 xtag.register('x-app', {
     lifecycle: {
         created: function () {
+            this.xtag.app = this;
             this.xtag.latesttasks = $(this.querySelector('x-latesttasks'));
             this.xtag.taskloop = $(this.querySelector('x-taskloop'));
             this.initialFetch();
@@ -168,21 +169,7 @@ xtag.register('x-app', {
             var self = this;
             // $.getJSON("http://127.0.0.1:8000/frontend/api.json", function (data) {
             $.getJSON("http://lizu.net:5000/stream", function (data) {
-                $.each(data, function (key, value) {
-                    var el = $('<x-streamitem></x-streamitem>');
-                    el.attr('title', value.title);
-                    el.attr('description', value.description);
-                    el.attr('moment', value.moment);
-                    el.attr('event', value.event);
-                    el.get(0).buildUsers(value.users);
-
-                    if (value.event == "flame" && self.xtag.latesttasks != null) {
-                        self.xtag.latesttasks.append(el);
-                    } else {
-                        var el = $("<div></div>").append(el);
-                        self.xtag.taskloop.append(el);
-                    }
-                });
+                self.fillTasks(data);
                 self.initSlider(self);
             });
         },
@@ -207,6 +194,24 @@ xtag.register('x-app', {
                     pauseOnHover: false
                 });
             }
+        },
+        fillTasks: function(data) {
+            var self = this;
+            $.each(data, function (key, value) {
+                var el = $('<x-streamitem></x-streamitem>');
+                el.attr('title', value.title);
+                el.attr('description', value.description);
+                el.attr('moment', value.moment);
+                el.attr('event', value.event);
+                el.get(0).buildUsers(value.users);
+
+                if (value.event == "flame" && self.xtag.latesttasks != null) {
+                    self.xtag.latesttasks.append(el);
+                } else {
+                    var el = $("<div></div>").append(el);
+                    self.xtag.taskloop.append(el);
+                }
+            });
         }
     }
 });
