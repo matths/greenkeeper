@@ -40,6 +40,8 @@ sidebar
     
   img
     border-radius(5px)
+    margin-left 15px
+    margin-top 15px
 
   @media only screen and (min-width: 640px)
     display block
@@ -47,10 +49,19 @@ sidebar
   .badges
     position absolute;
     bottom 0
+    padding-left 15px 
+  .badges h2
+      font-weight normal
+      color #76b729
+ 
 
 x-app
   @media only screen and (min-width: 640px)
     col(8/12, gutter: 0)
+
+.x-app h2
+  padding-left 20px
+  
 
 x-taskloop, x-latesttasks
   cf()
@@ -86,7 +97,7 @@ x-streamitem
       margin-left 30px
       h2
         color #76b729
-        margin 10px 0 0 0
+        margin 10px -20 0
       p
         font-size 14px
         margin 0 0 10px 0
@@ -95,6 +106,7 @@ x-streamitem
     col(1/5 8/12, gutter: 0)
     img
       border-radius(5px)
+
   h3
     col(1/5 8/12, gutter: 0)
     position absolute
@@ -102,6 +114,16 @@ x-streamitem
     bottom 0
     right 10px
     text-align right
+div.company
+  padding-left 15px
+  h2
+    font-weight normal
+    color #76b729
+  p
+    color #ffffff
+
+
+    
 
 x-usertask
   cf()

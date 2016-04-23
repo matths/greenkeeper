@@ -231,6 +231,8 @@ sidebar img {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+  margin-left: 15px;
+  margin-top: 15px;
 }
 @media only screen and (min-width: 640px) {
   sidebar {
@@ -240,6 +242,11 @@ sidebar img {
 sidebar .badges {
   position: absolute;
   bottom: 0;
+  padding-left: 15px;
+}
+sidebar .badges h2 {
+  font-weight: normal;
+  color: #76b729;
 }
 @media only screen and (min-width: 640px) {
   x-app {
@@ -262,6 +269,9 @@ sidebar .badges {
   x-app:last-child {
     margin-right: 0%;
   }
+}
+.x-app h2 {
+  padding-left: 20px;
 }
 x-taskloop,
 x-latesttasks {
@@ -338,7 +348,7 @@ x-streamitem div div.text-box {
 }
 x-streamitem div div.text-box h2 {
   color: #76b729;
-  margin: 10px 0 0 0;
+  margin: 10px -20 0;
 }
 x-streamitem div div.text-box p {
   font-size: 14px;
@@ -393,6 +403,16 @@ x-streamitem h3:after {
 }
 x-streamitem h3:last-child {
   margin-right: 0%;
+}
+div.company {
+  padding-left: 15px;
+}
+div.company h2 {
+  font-weight: normal;
+  color: #76b729;
+}
+div.company p {
+  color: #fff;
 }
 x-usertask {
   *zoom: 1;
