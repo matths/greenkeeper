@@ -2,7 +2,7 @@
   {
     "title": "Mein Task",
     "event": "flame",
-    "moment": "Vor 8 Minuten",
+    "moment": "Gerade",
     "description": "Description Description Description Description",
     "users": [
       {
@@ -18,7 +18,7 @@
   {
     "title": "Mein Task2",
     "event": "Checkin",
-    "last_action": "Gerade",
+    "moment": "Vor 8 Minuten",
     "description": "Description Description Description Description",
     "users": [
       {
@@ -30,7 +30,87 @@
   {
     "title": "Mein Task3",
     "event": "Checkout",
-    "last_action": "Vor einer Stunde",
+    "moment": "Vor einer Stunde",
+    "description": "Description Description Description Description",
+    "users": [
+      {
+        "avatar": "bild1.png",
+        "name": "Matthias"
+      }
+    ]
+  },
+  {
+    "title": "Mein Task",
+    "event": "flame",
+    "moment": "Gerade",
+    "description": "Description Description Description Description",
+    "users": [
+      {
+        "avatar": "bild1.png",
+        "name": "Matthias"
+      },
+      {
+        "avatar": "bild2.png",
+        "name": "Markus"
+      }
+    ]
+  },
+  {
+    "title": "Mein Task2",
+    "event": "Checkin",
+    "moment": "Vor 8 Minuten",
+    "description": "Description Description Description Description",
+    "users": [
+      {
+        "avatar": "bild1.png",
+        "name": "Matthias"
+      }
+    ]
+  },
+  {
+    "title": "Mein Task3",
+    "event": "Checkout",
+    "moment": "Vor einer Stunde",
+    "description": "Description Description Description Description",
+    "users": [
+      {
+        "avatar": "bild1.png",
+        "name": "Matthias"
+      }
+    ]
+  },
+  {
+    "title": "Mein Task",
+    "event": "flame",
+    "moment": "Gerade",
+    "description": "Description Description Description Description",
+    "users": [
+      {
+        "avatar": "bild1.png",
+        "name": "Matthias"
+      },
+      {
+        "avatar": "bild2.png",
+        "name": "Markus"
+      }
+    ]
+  },
+  {
+    "title": "Mein Task2",
+    "event": "Checkin",
+    "moment": "Vor 8 Minuten",
+    "description": "Description Description Description Description",
+    "users": [
+      {
+        "avatar": "bild1.png",
+        "name": "Matthias"
+      }
+    ]
+  },
+  {
+    "title": "Mein Task3",
+    "event": "Checkout",
+    "moment": "Vor einer Stunde",
     "description": "Description Description Description Description",
     "users": [
       {

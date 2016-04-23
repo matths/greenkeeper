@@ -182,7 +182,6 @@ margin
 }
 header {
   height: 60px;
-  margin-bottom: 20px;
   background-color: #232429;
 }
 header h1 {
@@ -195,10 +194,11 @@ sidebar {
   float: left;
   clear: none;
   text-align: inherit;
-  width: 14.166666666666664%;
+  width: 16.666666666666664%;
   margin-left: 0%;
-  margin-right: 3%;
+  margin-right: 0%;
   height: 100%;
+  display: none;
 }
 sidebar:before,
 sidebar:after {
@@ -211,18 +211,71 @@ sidebar:after {
 sidebar:last-child {
   margin-right: 0%;
 }
+sidebar.left {
+  background-color: #2f313c;
+}
+sidebar.right {
+  background-color: #d5dadd;
+}
+@media only screen and (min-width: 640px) {
+  sidebar {
+    display: block;
+  }
+}
 sidebar .badges {
   position: absolute;
   bottom: 0;
+}
+x-app {
+  margin-top: 20px;
+}
+@media only screen and (min-width: 640px) {
+  x-app {
+    *zoom: 1;
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 66.66666666666666%;
+    margin-left: 0%;
+    margin-right: 0%;
+  }
+  x-app:before,
+  x-app:after {
+    content: '';
+    display: table;
+  }
+  x-app:after {
+    clear: both;
+  }
+  x-app:last-child {
+    margin-right: 0%;
+  }
+}
+x-task {
+  *zoom: 1;
+  display: block;
+  border-top: 1px solid #000;
+  position: relative;
+}
+x-task:before,
+x-task:after {
+  content: '';
+  display: table;
+}
+x-task:after {
+  clear: both;
+}
+x-task:last-child {
+  border-bottom: 1px solid #000;
 }
 x-task div {
   *zoom: 1;
   float: left;
   clear: none;
   text-align: inherit;
-  width: 48.5%;
+  width: 60%;
   margin-left: 0%;
-  margin-right: 3%;
+  margin-right: 0%;
 }
 x-task div:before,
 x-task div:after {
@@ -235,14 +288,24 @@ x-task div:after {
 x-task div:last-child {
   margin-right: 0%;
 }
+x-task div div.event {
+  width: 20px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+x-task div div.text-box {
+  margin-left: 30px;
+}
 x-task div.avatar-container {
   *zoom: 1;
   float: left;
   clear: none;
   text-align: inherit;
-  width: 14.166666666666664%;
+  width: 20%;
   margin-left: 0%;
-  margin-right: 3%;
+  margin-right: 0%;
 }
 x-task div.avatar-container:before,
 x-task div.avatar-container:after {
@@ -253,5 +316,28 @@ x-task div.avatar-container:after {
   clear: both;
 }
 x-task div.avatar-container:last-child {
+  margin-right: 0%;
+}
+x-task h3 {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 20%;
+  margin-left: 0%;
+  margin-right: 0%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+x-task h3:before,
+x-task h3:after {
+  content: '';
+  display: table;
+}
+x-task h3:after {
+  clear: both;
+}
+x-task h3:last-child {
   margin-right: 0%;
 }
