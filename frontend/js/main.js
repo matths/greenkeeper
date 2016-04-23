@@ -85,8 +85,8 @@ xtag.register('x-app', {
     methods: {
         initialFetch: function () {
             var self = this;
-            $.getJSON("http://127.0.0.1:8000/frontend/api.json", function (data) {
-                // $.getJSON("http://lizu.net:5000/stream", function (data) {
+            // $.getJSON("http://127.0.0.1:8000/frontend/api.json", function (data) {
+                $.getJSON("http://lizu.net:5000/stream", function (data) {
                 $.each(data, function (key, value) {
                     var el = $('<x-task></x-task>');
                     el.attr('title', value.title);
