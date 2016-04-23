@@ -412,7 +412,7 @@ x-usertask h2 {
   width: 45px;
   height: 45px;
 }
-#btnuflame {
+#btnunflame {
   background-image: url("../img/btn-problem-enabled.png");
   width: 45px;
   height: 45px;
@@ -430,7 +430,7 @@ x-usertask h2 {
 #btnflame,
 #btncheckin,
 #btncheckout,
-#btnuflame {
+#btnunflame {
   border: none;
   background-color: transparent;
   display: none;
