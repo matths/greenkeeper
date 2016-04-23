@@ -8,12 +8,14 @@ xtag.register('x-avatar', {
 });
 
 xtag.register('x-task', {
-	content: '<div><h2></h2><p></p></div><div class="avatar-container"></div>',
+	content: '<div><div class="event"></div><div class="text-box"><h2></h2><p></p></div></div><div class="avatar-container"></div><h3></h3>',
 	lifecycle: {
 		created: function () {
+			this.xtag.event = this.querySelector('div.event');
 			this.xtag.title = this.querySelector('h2');
 			this.xtag.description = this.querySelector('p');
 			this.xtag.avatars = this.querySelector('div.avatar-container');
+			this.xtag.moment = this.querySelector('h3');
 		}
 	},
 	accessors: {
@@ -29,6 +31,24 @@ xtag.register('x-task', {
             },
             set: function (value) {
                 this.xtag.description.textContent = value;
+            }
+        },
+		moment: {
+            attribute: {
+            },
+            set: function (value) {
+                this.xtag.moment.textContent = value;
+            }
+        },
+		event: {
+            attribute: {
+            },
+            set: function (value) {
+				var color = '#58c000';
+				if (value == 'flame') {
+					color = '#e10000';
+				}
+                $(this.xtag.event).css('background-color', color);
             }
         },
 	},
@@ -75,6 +95,8 @@ xtag.register('x-app', {
                     var el = $('<x-task></x-task>');
                     el.attr('title', value.title);
                     el.attr('description', value.description);
+                    el.attr('moment', value.moment);
+                    el.attr('event', value.event);
                     el.get(0).buildUsers(value.users);
 
                     if (value.event == "flame") {
