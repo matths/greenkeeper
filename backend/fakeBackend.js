@@ -26,6 +26,27 @@ function findTask(id) {
 	return false;
 }
 
+function findTaskForUser(userId) {
+	for (var i=0; i<data.stream.length; i++) {
+		var users = data.stream[i].users;
+		if (users) for (var j=0; j<users.length; j++) {
+			if (users[j].id == userId) {
+				return data.stream[i];
+			}
+		}
+	}
+	return false;
+}
+
+function findUser(userId) {
+	for (var i=0; i<data.users.length; i++) {
+		if (data.users[i].id == userId) {
+			return data.users[i];
+		}
+	}
+	return false;
+}
+
 function updateStreamTimes() {
 	data.stream.map(function (value, index) {
 		if (value.timestamp) {
@@ -66,6 +87,28 @@ app.use('/*', function (req, res, next) {
 app.get('/tasks', function(req, res) {
 	res.json(data.tasks);
 });
+
+app.get('/currentStreamItem/:userId', function(req, res) {
+	var selectedTask = findTaskForUser(req.params.userId);
+	if (selectedTask) {
+		res.json(selectedTask);
+	} else {
+		var selectedUser = findUser(req.params.userId);
+		if (selectedUser) {
+			res.json({
+			    "id": "na",
+			    "title": "Check now in",
+			    "event": "none",
+			    "moment": "",
+			    "description": "",
+			    "users": [selectedUser]
+			});
+		} else {
+			res.sendStatus(404);
+		}
+	}
+});
+
 
 app.get('/task/checkin/:taskId', function(req, res) {
 	var selectedTask = findTask(req.params.taskId);
