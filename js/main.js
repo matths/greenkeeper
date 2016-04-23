@@ -3,6 +3,7 @@ xtag.register('x-avatar', {
 	lifecycle: {
 		created: function () {
 			this.xtag.img = this.querySelector('img');
+			this.xtag.img.src = "bla.png";
 		}
 	}
 });
@@ -19,7 +20,20 @@ xtag.register('x-task', {
 xtag.register('x-latesttasks', {
 	lifecycle: {
 		created: function () {
-			this.xtag.tasks = xtag.queryChildren(this, 'x-card');
+            this.fetch();
 		}
-	}
+	},
+    methods: {
+        fetch: function () {
+            $.getJSON("http://127.0.0.1:8000/api.json", function (data) {
+                var self = $(this);
+                $.each(data, function(key, value) {
+                    var el = $('<x-task></x-task>');
+                    el.attr('title', value.title);
+                    self.htmlConent = self.htmlConent + el;
+                });
+            });
+
+        }
+    }
 });
