@@ -4,6 +4,7 @@ var app = express();
 
 var moment = require('moment');
 
+app.use(express.static('frontend'));
 
 app.use(expressUser({
     store: 'memory',
