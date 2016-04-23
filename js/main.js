@@ -19,6 +19,8 @@ xtag.register('x-task', {
 	},
 	accessors: {
 		title: {
+            attribute: {
+            },
 			set: function (value) {
         	    this.xtag.title.textContent = value;
         	}

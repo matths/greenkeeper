@@ -3,6 +3,7 @@
     "title": "Mein Task",
     "event": "flame",
     "moment": "Vor 8 Minuten",
+    "description": "Description Description Description Description",
     "users": [
       {
         "avatar": "bild1.png",
@@ -18,6 +19,7 @@
     "title": "Mein Task2",
     "event": "Checkin",
     "last_action": "Gerade",
+    "description": "Description Description Description Description",
     "users": [
       {
         "avatar": "bild1.png",
@@ -29,6 +31,7 @@
     "title": "Mein Task3",
     "event": "Checkout",
     "last_action": "Vor einer Stunde",
+    "description": "Description Description Description Description",
     "users": [
       {
         "avatar": "bild1.png",
