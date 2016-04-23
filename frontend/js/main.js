@@ -7,6 +7,27 @@ xtag.register('x-avatar', {
     }
 });
 
+xtag.register('x-task', {
+    content: "<div><a href=''><h2></h2><p></p><h3></h3></a></div>",
+    lifecycle: {
+        created: function () {
+            this.xtag.link = this.querySelector('a');
+            this.xtag.title = this.querySelector('h2');
+            this.xtag.description = this.querySelector('p');
+            this.xtag.project = this.querySelector('h3');
+        }
+    },
+    methods: {
+        setValues: function (task) {
+            this.xtag.link.href = "http://lizu.net:5000/task/checkin/" + task.id;
+            this.xtag.title.textContent = task.title;
+            this.xtag.description.textContent = task.description;
+            this.xtag.project.textContent = task.project + " | " + task.client;
+        }
+    }
+});
+
+
 xtag.register('x-streamitem', {
     content: '<div><div class="event"></div><div class="text-box"><h2></h2><p></p></div></div><div class="avatar-container"></div><h3></h3>',
     lifecycle: {
@@ -80,10 +101,10 @@ xtag.register('x-usertask', {
                 self.xtag.img.src = "img/" + data.users[0].avatar;
                 $('.action').hide();
                 if (data.event == "none") {
-                    $('#btncheckin').show();
+                    $('#btncheckin').css('display', 'block');
                 }
                 else {
-                    $('#btncheckout, #btnflame').show();
+                    $('#btncheckout, #btnflame').css('display', 'block');
                 }
             });
         }
@@ -101,20 +122,10 @@ xtag.register('x-tasks', {
         initialFetch: function () {
             var self = this;
             $.getJSON("http://lizu.net:5000/tasks", function (data) {
-                $.each(data, function (key, value) {
-                    var el = $('<x-streamitem></x-streamitem>');
-                    el.attr('title', value.title);
-                    el.attr('description', value.description);
-                    el.attr('moment', value.moment);
-                    el.attr('event', value.event);
-                    el.get(0).buildUsers(value.users);
-
-                    if (value.event == "flame" && self.xtag.latesttasks != null) {
-                        self.xtag.latesttasks.append(el);
-                    } else {
-                        var el = $("<div></div>").append(el);
-                        self.xtag.taskloop.append(el);
-                    }
+                $.each(data, function (key, task) {
+                    var el = $('<x-task></x-task>');
+                    el.get(0).setValues(task);
+                    $(self).append(el);
                 });
             });
         }
