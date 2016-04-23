@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/matths/greenkeeper#readme",
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "moment": "^2.13.0"
   }
 }
