@@ -135,10 +135,29 @@ app.get('/stream', function(req, res) {
 	res.json(data.stream);
 });
 
-app.get('/task/flame/:taskId', function(req, res) {
+app.get('/task/flame/:userId', function(req, res) {
+	var selectedStreamitem = findStreamitemForUser(req.params.userId);
+	if (selectedStreamitem) {
+		createEvent(selectedStreamitem, "flame" , data.users[0]);
+		res.redirect('/widget.html');
+	} else {
+		res.sendStatus(404);
+	}
 });
 
-app.get('/task/unflame/:taskId', function(req, res) {
+app.get('/task/unflame/:userId', function(req, res) {
+	var selectedStreamitem = findStreamitemForUser(req.params.userId);
+	if (selectedStreamitem) {
+		createEvent(selectedStreamitem, "checkin" , data.users[0]);
+		res.redirect('/widget.html');
+	} else {
+		res.sendStatus(404);
+	}
 });
+
+app.get('/search/:searchString', function(req, res) {
+
+});
+
 
 app.listen(5000);

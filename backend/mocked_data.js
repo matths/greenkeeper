@@ -2,7 +2,7 @@ var _stream = [
   {
     "id": "a6f0ce02-b4e0-5eee-4db1-f96f59e7ddeb",
     "title": "Neue Sommerserie: Die schönsten Badeseen",
-    "event": "Checkin",
+    "event": "checkin",
     "moment": "Gerade",
     "description": "Multimediales Storytelling: Interaktive Karte, Videos und Bildergalerien zu Badeseen im Landkreis. Grafik fehlt!",
     "users": [
@@ -21,7 +21,7 @@ var _stream = [
   {
     "id": "fa5afe09-5eb5-f526-d7a6-e0a840977f79",
     "title": "Integration von Pageflow in den Webserver",
-    "event": "Checkin",
+    "event": "checkin",
     "moment": "Vor 8 Minuten",
     "description": "Zusammen mit dem Online:-Team Pageflow installieren, anpassen und testen",
     "users": [
@@ -59,7 +59,7 @@ var _stream = [
   {
     "id": "d85a0b21-af0f-6a44-ae7c-472354098846",
     "title": "Luftaufnahmen mit der Drohne",
-    "event": "Checkin",
+    "event": "checkin",
     "moment": "Gerade",
     "description": "Stadt genehmigt Flug über Rathaus nicht",
     "users": [
@@ -78,7 +78,7 @@ var _stream = [
   {
     "id": "dbf63927-f7cf-3f32-a32b-ce8dc36c06a4",
     "title": "Intro für Videos entwickeln",
-    "event": "Checkin",
+    "event": "checkin",
     "moment": "Vor 8 Minuten",
     "description": "Neues Intro für Redaktionsvideos basteln - Logo fehlt auch noch",
     "users": [
@@ -125,7 +125,7 @@ var _stream = [
   {
     "id": "2e87b74d-7539-56b1-30dd-637d15d33ec1",
     "title": "Facebook-Benchmark",
-    "event": "Checkin",
+    "event": "checkin",
     "moment": "Vor 8 Minuten",
     "description": "Statistik aller Facebook-Auftritte von Zeitungen im Verbreitungsgebiet vorbereiten",
     "users": [
