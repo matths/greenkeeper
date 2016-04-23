@@ -6,6 +6,9 @@ border-radius(n)
   -moz-border-radius n
   border-radius n
 
+img
+  max-width 100%
+
 body
   font-family 'Cabin Condensed', Arial, sans-serif
   font-size  12px
@@ -46,16 +49,16 @@ x-taskloop, x-latesttasks
   display block
 
 x-latesttasks
-  x-task
+  x-streamitem
     padding 10px 0
 
 x-taskloop
   overflow hidden
   position relative
-  x-task
+  x-streamitem
     height 100%
 
-x-task
+x-streamitem
   cf()
   display block
   border-top 1px solid #000
@@ -89,25 +92,33 @@ x-task
     position absolute
     font-size 9px
     bottom 0
-    right 0
+    right 10px
+    text-align right
 
 x-usertask
+  cf()
+  display block
   background-color #30323d
   height 200px
   h2
     color #78b63d
 
+#btnflame, #btncheckin, #btncheckout
+  border none
+  background-color transparent
+  display none
+
 #btnflame
-  background-image url("img/btn-problem.png")
+  background-image url("../img/btn-problem.png")
   width 45px
   height 45px
 
 #btncheckin
-  background-image url("img/btn-checkin.png")
+  background-image url("../img/btn-checkin.png")
   width 49px
   height 46px
 
 #btncheckout
-  background-image url("img/btn-checkout.png")
+  background-image url("../img/btn-checkout.png")
   width 51px
   height 45px

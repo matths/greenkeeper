@@ -176,6 +176,9 @@ td,
 th {
   padding: 0;
 }
+img {
+  max-width: 100%;
+}
 body {
   font-family: 'Cabin Condensed', Arial, sans-serif;
   font-size: 12px;
@@ -265,34 +268,34 @@ x-taskloop:after,
 x-latesttasks:after {
   clear: both;
 }
-x-latesttasks x-task {
+x-latesttasks x-streamitem {
   padding: 10px 0;
 }
 x-taskloop {
   overflow: hidden;
   position: relative;
 }
-x-taskloop x-task {
+x-taskloop x-streamitem {
   height: 100%;
 }
-x-task {
+x-streamitem {
   *zoom: 1;
   display: block;
   border-top: 1px solid #000;
   position: relative;
 }
-x-task:before,
-x-task:after {
+x-streamitem:before,
+x-streamitem:after {
   content: '';
   display: table;
 }
-x-task:after {
+x-streamitem:after {
   clear: both;
 }
-x-task:last-child {
+x-streamitem:last-child {
   border-bottom: 1px solid #000;
 }
-x-task div {
+x-streamitem div {
   *zoom: 1;
   float: left;
   clear: none;
@@ -301,36 +304,36 @@ x-task div {
   margin-left: 0%;
   margin-right: 0%;
 }
-x-task div:before,
-x-task div:after {
+x-streamitem div:before,
+x-streamitem div:after {
   content: '';
   display: table;
 }
-x-task div:after {
+x-streamitem div:after {
   clear: both;
 }
-x-task div:last-child {
+x-streamitem div:last-child {
   margin-right: 0%;
 }
-x-task div div.event {
+x-streamitem div div.event {
   width: 20px;
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
 }
-x-task div div.text-box {
+x-streamitem div div.text-box {
   margin-left: 30px;
 }
-x-task div div.text-box h2 {
+x-streamitem div div.text-box h2 {
   color: #76b729;
   margin: 10px 0 0 0;
 }
-x-task div div.text-box p {
+x-streamitem div div.text-box p {
   font-size: 14px;
   margin: 0 0 10px 0;
 }
-x-task div.avatar-container {
+x-streamitem div.avatar-container {
   *zoom: 1;
   float: left;
   clear: none;
@@ -339,23 +342,23 @@ x-task div.avatar-container {
   margin-left: 0%;
   margin-right: 0%;
 }
-x-task div.avatar-container:before,
-x-task div.avatar-container:after {
+x-streamitem div.avatar-container:before,
+x-streamitem div.avatar-container:after {
   content: '';
   display: table;
 }
-x-task div.avatar-container:after {
+x-streamitem div.avatar-container:after {
   clear: both;
 }
-x-task div.avatar-container:last-child {
+x-streamitem div.avatar-container:last-child {
   margin-right: 0%;
 }
-x-task div.avatar-container img {
+x-streamitem div.avatar-container img {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-x-task h3 {
+x-streamitem h3 {
   *zoom: 1;
   float: left;
   clear: none;
@@ -366,16 +369,56 @@ x-task h3 {
   position: absolute;
   font-size: 9px;
   bottom: 0;
-  right: 0;
+  right: 10px;
+  text-align: right;
 }
-x-task h3:before,
-x-task h3:after {
+x-streamitem h3:before,
+x-streamitem h3:after {
   content: '';
   display: table;
 }
-x-task h3:after {
+x-streamitem h3:after {
   clear: both;
 }
-x-task h3:last-child {
+x-streamitem h3:last-child {
   margin-right: 0%;
+}
+x-usertask {
+  *zoom: 1;
+  display: block;
+  background-color: #30323d;
+  height: 200px;
+}
+x-usertask:before,
+x-usertask:after {
+  content: '';
+  display: table;
+}
+x-usertask:after {
+  clear: both;
+}
+x-usertask h2 {
+  color: #78b63d;
+}
+#btnflame,
+#btncheckin,
+#btncheckout {
+  border: none;
+  background-color: transparent;
+  display: none;
+}
+#btnflame {
+  background-image: url("../img/btn-problem.png");
+  width: 45px;
+  height: 45px;
+}
+#btncheckin {
+  background-image: url("../img/btn-checkin.png");
+  width: 49px;
+  height: 46px;
+}
+#btncheckout {
+  background-image: url("../img/btn-checkout.png");
+  width: 51px;
+  height: 45px;
 }

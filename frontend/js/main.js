@@ -7,7 +7,7 @@ xtag.register('x-avatar', {
     }
 });
 
-xtag.register('x-task', {
+xtag.register('x-streamitem', {
     content: '<div><div class="event"></div><div class="text-box"><h2></h2><p></p></div></div><div class="avatar-container"></div><h3></h3>',
     lifecycle: {
         created: function () {
@@ -60,27 +60,13 @@ xtag.register('x-task', {
     }
 });
 
-xtag.register('x-latesttasks', {
-    lifecycle: {
-        created: function () {
-        }
-    },
-});
-
-xtag.register('x-taskloop', {
-    lifecycle: {
-        created: function () {
-        }
-    },
-});
-
 xtag.register('x-usertask', {
     lifecycle: {
         created: function () {
-            this.xtag.title = $(this.querySelector('h2'));
-            this.xtag.moment = $(this.querySelector('span'));
-            this.xtag.description = $(this.querySelector('p'));
-            this.xtag.img = $(this.querySelector('img'));
+            this.xtag.title = this.querySelector('h2');
+            this.xtag.moment = this.querySelector('span');
+            this.xtag.description = this.querySelector('p');
+            this.xtag.img = this.querySelector('img');
             this.initialFetch();
         }
     },
@@ -91,9 +77,45 @@ xtag.register('x-usertask', {
                 self.xtag.title.textContent = data.title;
                 self.xtag.moment.textContent = data.moment;
                 self.xtag.description.textContent = data.description;
-                self.xtag.img.src = data.users[0].avatar;
+                self.xtag.img.src = "img/" + data.users[0].avatar;
+                $('.action').hide();
                 if (data.event == "none") {
+                    $('#btncheckin').show();
                 }
+                else {
+                    $('#btncheckout, #btnflame').show();
+                }
+            });
+        }
+    }
+});
+
+xtag.register('x-tasks', {
+    lifecycle: {
+        created: function () {
+            this.xtag.tasks = $(this.querySelector('x-tasks'));
+            this.initialFetch();
+        }
+    },
+    methods: {
+        initialFetch: function () {
+            var self = this;
+            $.getJSON("http://lizu.net:5000/tasks", function (data) {
+                $.each(data, function (key, value) {
+                    var el = $('<x-streamitem></x-streamitem>');
+                    el.attr('title', value.title);
+                    el.attr('description', value.description);
+                    el.attr('moment', value.moment);
+                    el.attr('event', value.event);
+                    el.get(0).buildUsers(value.users);
+
+                    if (value.event == "flame" && self.xtag.latesttasks != null) {
+                        self.xtag.latesttasks.append(el);
+                    } else {
+                        var el = $("<div></div>").append(el);
+                        self.xtag.taskloop.append(el);
+                    }
+                });
             });
         }
     }
@@ -113,7 +135,7 @@ xtag.register('x-app', {
             // $.getJSON("http://127.0.0.1:8000/frontend/api.json", function (data) {
             $.getJSON("http://lizu.net:5000/stream", function (data) {
                 $.each(data, function (key, value) {
-                    var el = $('<x-task></x-task>');
+                    var el = $('<x-streamitem></x-streamitem>');
                     el.attr('title', value.title);
                     el.attr('description', value.description);
                     el.attr('moment', value.moment);
@@ -133,7 +155,7 @@ xtag.register('x-app', {
         initSlider: function (self) {
             var itemsToShow = $(document).width() > 1024 ? 6 : 4;
             self.xtag.taskloop.css("height", 0 + "px");
-            var height = $(document).height() - $('header').height() - self.xtag.latesttasks.height() - $('x-app>h2').outerHeight(true);
+            var height = $(document).height() - $('header').height() - self.xtag.latesttasks.height() - $('.x-app>h2').outerHeight(true);
             var itemHeight = parseInt((height + 0.5) / itemsToShow);
             $(">div", self.xtag.taskloop).css("height", itemHeight + "px");
             $(">div", self.xtag.taskloop).css("overflow", "hidden");
