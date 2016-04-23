@@ -74,6 +74,31 @@ xtag.register('x-taskloop', {
     },
 });
 
+xtag.register('x-usertask', {
+    lifecycle: {
+        created: function () {
+            this.xtag.title = $(this.querySelector('h2'));
+            this.xtag.moment = $(this.querySelector('span'));
+            this.xtag.description = $(this.querySelector('p'));
+            this.xtag.img = $(this.querySelector('img'));
+            this.initialFetch();
+        }
+    },
+    methods: {
+        initialFetch: function () {
+            var self = this;
+            $.getJSON("http://lizu.net:5000/currentStreamItem/cb5847ff-ee2b-e860-7bdd-e6ce96481e74", function(data) {
+                self.xtag.title.textContent = data.title;
+                self.xtag.moment.textContent = data.moment;
+                self.xtag.description.textContent = data.description;
+                self.xtag.img.src = data.users[0].avatar;
+                if (data.event == "none") {
+                }
+            });
+        }
+    }
+});
+
 xtag.register('x-app', {
     lifecycle: {
         created: function () {
@@ -86,7 +111,7 @@ xtag.register('x-app', {
         initialFetch: function () {
             var self = this;
             // $.getJSON("http://127.0.0.1:8000/frontend/api.json", function (data) {
-                $.getJSON("http://lizu.net:5000/stream", function (data) {
+            $.getJSON("http://lizu.net:5000/stream", function (data) {
                 $.each(data, function (key, value) {
                     var el = $('<x-task></x-task>');
                     el.attr('title', value.title);
@@ -106,14 +131,14 @@ xtag.register('x-app', {
             });
         },
         initSlider: function (self) {
-                var itemsToShow = $(document).width() > 1024 ? 6 : 4;
-                self.xtag.taskloop.css("height", 0 + "px");
-                var height = $(document).height() - $('header').height() - self.xtag.latesttasks.height() - $('x-app>h2').outerHeight(true);
-                var itemHeight = parseInt((height + 0.5) / itemsToShow);
-                $(">div", self.xtag.taskloop).css("height", itemHeight + "px");
-                $(">div", self.xtag.taskloop).css("overflow", "hidden");
-                height = itemHeight * itemsToShow;
-                self.xtag.taskloop.css("height", height + "px");
+            var itemsToShow = $(document).width() > 1024 ? 6 : 4;
+            self.xtag.taskloop.css("height", 0 + "px");
+            var height = $(document).height() - $('header').height() - self.xtag.latesttasks.height() - $('x-app>h2').outerHeight(true);
+            var itemHeight = parseInt((height + 0.5) / itemsToShow);
+            $(">div", self.xtag.taskloop).css("height", itemHeight + "px");
+            $(">div", self.xtag.taskloop).css("overflow", "hidden");
+            height = itemHeight * itemsToShow;
+            self.xtag.taskloop.css("height", height + "px");
             if (typeof self.xtag.taskloop.slick != "undefined") {
                 self.xtag.taskloop.slick({
                     slidesToShow: itemsToShow,
