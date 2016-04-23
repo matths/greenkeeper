@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/matths/greenkeeper#readme",
   "dependencies": {
-    "jswiremock": "^0.3.2"
+    "express": "^4.13.4",
   }
 }
