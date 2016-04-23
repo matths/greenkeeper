@@ -1,7 +1,17 @@
 var express = require('express');
+var expressUser = require('express-users');
 var app = express();
 
 var moment = require('moment');
+
+
+app.use(expressUser({
+    store: 'memory',
+    data: [
+        {username: 'Matthias', pwd: 'hackday', email: 'matthias.dittgen@valiton.com'}
+    ]
+}));
+
 
 var data = require('./mocked_data.js'); // global in memory database with prefilled data ;)
 
