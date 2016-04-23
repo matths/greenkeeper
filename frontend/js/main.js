@@ -103,6 +103,10 @@ xtag.register('x-usertask', {
                 if (data.event == "none") {
                     $('#btncheckin').css('display', 'block');
                 }
+                else if (data.event == "flame") {
+                    $('#btnunflame').css('display', 'block');
+                    alert('flame');
+                }
                 else {
                     $('#btncheckout, #btnflame').css('display', 'block');
                 }
