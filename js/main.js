@@ -102,19 +102,27 @@ xtag.register('x-app', {
                         self.xtag.taskloop.append(el);
                     }
                 });
-                self.xtag.taskloop.css("height", 0 + "px");
-                var height = $(document).height() - $('header').height() - self.xtag.latesttasks.height() - $('x-app>h2').outerHeight(true);
-                self.xtag.taskloop.css("height", height + "px");
-                self.xtag.taskloop.slick({
-                    vertical: true,
-                    infinite: true,
-                    slidesToShow: 5,
-                    slidesToScroll: 1,
-                    autoplay: true,
-                    autoplaySpeed: 2000,
-                });
+                self.initSlider(self);
             });
-
+        },
+        initSlider: function(self) {
+            self.xtag.taskloop.css("height", 0 + "px");
+            var height = $(document).height() - $('header').height() - self.xtag.latesttasks.height() - $('x-app>h2').outerHeight(true);
+            var itemHeight = parseInt(height / 4);
+            $(">div", self.xtag.taskloop).css("height", itemHeight + "px");
+            $(">div", self.xtag.taskloop).css("overflow", "hidden");
+            height = itemHeight * 4;
+            self.xtag.taskloop.css("height", height + "px");
+            self.xtag.taskloop.slick({
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                vertical: true,
+                infinite: true,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                arrows: false,
+                pauseOnHover: false
+            });
         }
     }
 });
