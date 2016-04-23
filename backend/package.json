@@ -1,0 +1,26 @@
+{
+  "name": "greenback",
+  "version": "1.0.0",
+  "description": "backend for Greenkeeper",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matths/greenkeeper.git"
+  },
+  "keywords": [
+    "time",
+    "tracking"
+  ],
+  "author": "markus et. a.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matths/greenkeeper/issues"
+  },
+  "homepage": "https://github.com/matths/greenkeeper#readme",
+  "dependencies": {
+    "jswiremock": "^0.3.2"
+  }
+}
