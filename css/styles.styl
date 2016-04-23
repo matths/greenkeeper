@@ -1,2 +1,29 @@
+@import 'normalize'
 @import 'jeet'
 
+body
+  margin
+  font 12px Helvetica, Arial, sans-serif
+
+header
+  height 60px;
+  margin-bottom 20px;
+  background-color #232429;
+  h1
+    color #78b63d
+    line-height 60px
+    margin 0
+
+sidebar
+  col(1/6)
+  height 100%
+
+  .badges
+    position absolute;
+    bottom 0
+
+x-task div
+  col(3/6)
+
+x-task div.avatar-container
+  col(1/6)
