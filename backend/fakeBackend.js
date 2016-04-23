@@ -28,10 +28,12 @@ function findTask(id) {
 
 function findStreamitemForUser(userId) {
 	for (var i=0; i<data.stream.length; i++) {
-		var users = data.stream[i].users;
-		if (users) for (var j=0; j<users.length; j++) {
-			if (users[j].id == userId) {
-				return data.stream[i];
+		if (data.stream[i].event!="checkout") {
+			var users = data.stream[i].users;
+			if (users) for (var j=0; j<users.length; j++) {
+				if (users[j].id == userId) {
+					return data.stream[i];
+				}
 			}
 		}
 	}
@@ -123,7 +125,7 @@ app.get('/task/checkin/:taskId', function(req, res) {
 app.get('/task/checkout/:userId', function(req, res) {
 	var selectedStreamitem = findStreamitemForUser(req.params.userId);
 	if (selectedStreamitem) {
-		createEvent(selectedStreamitem, "none" , data.users[0]);
+		createEvent(selectedStreamitem, "checkout" , data.users[0]);
 		res.redirect('/widget.html');
 	} else {
 		res.sendStatus(404);
