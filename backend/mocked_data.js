@@ -2,7 +2,7 @@ var _stream = [
   {
     "id": "a6f0ce02-b4e0-5eee-4db1-f96f59e7ddeb",
     "title": "Neue Sommerserie: Die schönsten Badeseen",
-    "event": "flame",
+    "event": "Checkin",
     "moment": "Gerade",
     "description": "Multimediales Storytelling: Interaktive Karte, Videos und Bildergalerien zu Badeseen im Landkreis. Grafik fehlt!",
     "users": [
@@ -59,7 +59,7 @@ var _stream = [
   {
     "id": "d85a0b21-af0f-6a44-ae7c-472354098846",
     "title": "Luftaufnahmen mit der Drohne",
-    "event": "flame",
+    "event": "Checkin",
     "moment": "Gerade",
     "description": "Stadt genehmigt Flug über Rathaus nicht",
     "users": [
