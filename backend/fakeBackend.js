@@ -28,10 +28,12 @@ function findTask(id) {
 
 function findStreamitemForUser(userId) {
 	for (var i=0; i<data.stream.length; i++) {
-		var users = data.stream[i].users;
-		if (users) for (var j=0; j<users.length; j++) {
-			if (users[j].id == userId) {
-				return data.stream[i];
+		if (data.stream[i].event!="checkout") {
+			var users = data.stream[i].users;
+			if (users) for (var j=0; j<users.length; j++) {
+				if (users[j].id == userId) {
+					return data.stream[i];
+				}
 			}
 		}
 	}
@@ -54,7 +56,6 @@ function updateStreamTimes() {
 		}
 	});
 }
-
 setInterval(updateStreamTimes, 1000);
 
 function createEvent(task, event, user) {
@@ -114,7 +115,7 @@ app.get('/task/checkin/:taskId', function(req, res) {
 	var selectedTask = findTask(req.params.taskId);
 	if (selectedTask) {
 		createEvent(selectedTask, "checkin" , data.users[0]);
-		res.redirect('widget.html');
+		res.redirect('/widget.html');
 	} else {
 		res.sendStatus(404);
 	}
@@ -124,7 +125,7 @@ app.get('/task/checkout/:userId', function(req, res) {
 	var selectedStreamitem = findStreamitemForUser(req.params.userId);
 	if (selectedStreamitem) {
 		createEvent(selectedStreamitem, "checkout" , data.users[0]);
-		res.redirect('widget.html');
+		res.redirect('/tasks.html');
 	} else {
 		res.sendStatus(404);
 	}
@@ -134,10 +135,29 @@ app.get('/stream', function(req, res) {
 	res.json(data.stream);
 });
 
-app.get('/task/flame/:taskId', function(req, res) {
+app.get('/task/flame/:userId', function(req, res) {
+	var selectedStreamitem = findStreamitemForUser(req.params.userId);
+	if (selectedStreamitem) {
+		createEvent(selectedStreamitem, "flame" , data.users[0]);
+		res.redirect('/widget.html');
+	} else {
+		res.sendStatus(404);
+	}
 });
 
-app.get('/task/unflame/:taskId', function(req, res) {
+app.get('/task/unflame/:userId', function(req, res) {
+	var selectedStreamitem = findStreamitemForUser(req.params.userId);
+	if (selectedStreamitem) {
+		createEvent(selectedStreamitem, "checkin" , data.users[0]);
+		res.redirect('/widget.html');
+	} else {
+		res.sendStatus(404);
+	}
 });
+
+app.get('/search/:searchString', function(req, res) {
+
+});
+
 
 app.listen(5000);
