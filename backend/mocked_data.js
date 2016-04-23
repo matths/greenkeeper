@@ -12,6 +12,7 @@ var _stream = [
         "name": "Matthias"
       },
       {
+        "id": "na",
         "avatar": "markus.png",
         "name": "Markus"
       }
@@ -30,10 +31,12 @@ var _stream = [
         "name": "Tobias"
         },
       {
+        "id": "na",
         "avatar": "jan.png",
         "name": "Jan"
         },
       {
+        "id": "na",
         "avatar": "ricarda.png",
         "name": "Ricarda"
       }
@@ -66,6 +69,7 @@ var _stream = [
         "name": "Oliver"
       },
       {
+        "id": "na",
         "avatar": "lars.png",
         "name": "Lars"
       }
@@ -79,7 +83,7 @@ var _stream = [
     "description": "Neues Intro für Redaktionsvideos basteln - Logo fehlt auch noch",
     "users": [
       {
-        "id": "3456",
+        "id": "na",
         "avatar": "joerg.png",
         "name": "Jörg"
       }
@@ -112,6 +116,7 @@ var _stream = [
         "name": "Wolfgang"
       },
       {
+        "id": "na",
         "avatar": "jessica.png",
         "name": "Jessica"
       }
