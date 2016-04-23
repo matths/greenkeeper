@@ -56,7 +56,6 @@ function updateStreamTimes() {
 		}
 	});
 }
-
 setInterval(updateStreamTimes, 1000);
 
 function createEvent(task, event, user) {
@@ -126,7 +125,7 @@ app.get('/task/checkout/:userId', function(req, res) {
 	var selectedStreamitem = findStreamitemForUser(req.params.userId);
 	if (selectedStreamitem) {
 		createEvent(selectedStreamitem, "checkout" , data.users[0]);
-		res.redirect('/widget.html');
+		res.redirect('/tasks.html');
 	} else {
 		res.sendStatus(404);
 	}
