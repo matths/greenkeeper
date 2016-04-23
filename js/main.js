@@ -8,11 +8,12 @@ xtag.register('x-avatar', {
 });
 
 xtag.register('x-task', {
-	content: '<div><h2></h2><p></p></div>',
+	content: '<div><h2></h2><p></p></div><div class="avatar-container"></div>',
 	lifecycle: {
 		created: function () {
 			this.xtag.title = this.querySelector('h2');
 			this.xtag.description = this.querySelector('p');
+			this.xtag.avatars = this.querySelector('div.avatar-container');
 		}
 	},
 	accessors: {
@@ -33,7 +34,7 @@ xtag.register('x-task', {
 	},
 	methods: {
 		buildUsers: function (users) {
-			var self = this;
+			var self = this.xtag.avatars;
             $.each(users, function(key, value) {
 	            var el = $('<x-avatar></x-avatar>');
 	            el.get(0).xtag.img.src = "img/" + value.avatar;
@@ -69,6 +70,7 @@ xtag.register('x-app', {
         initialFetch: function () {
         	var self = this;
             $.getJSON("http://127.0.0.1:8000/api.json", function (data) {
+//			$.getJSON("http://greenkeeper.eu-gb.mybluemix.net/tasks", function (data) {
                 $.each(data, function(key, value) {
                     var el = $('<x-task></x-task>');
                     el.attr('title', value.title);
