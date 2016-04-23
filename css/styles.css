@@ -181,9 +181,77 @@ margin
   font: 12px Helvetica, Arial, sans-serif;
 }
 header {
-  height: 20px;
+  height: 60px;
+  margin-bottom: 20px;
   background-color: #232429;
 }
 header h1 {
   color: #78b63d;
+  line-height: 60px;
+  margin: 0;
+}
+sidebar {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 14.166666666666664%;
+  margin-left: 0%;
+  margin-right: 3%;
+  height: 100%;
+}
+sidebar:before,
+sidebar:after {
+  content: '';
+  display: table;
+}
+sidebar:after {
+  clear: both;
+}
+sidebar:last-child {
+  margin-right: 0%;
+}
+sidebar .badges {
+  position: absolute;
+  bottom: 0;
+}
+x-task div {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 48.5%;
+  margin-left: 0%;
+  margin-right: 3%;
+}
+x-task div:before,
+x-task div:after {
+  content: '';
+  display: table;
+}
+x-task div:after {
+  clear: both;
+}
+x-task div:last-child {
+  margin-right: 0%;
+}
+x-task div.avatar-container {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 14.166666666666664%;
+  margin-left: 0%;
+  margin-right: 3%;
+}
+x-task div.avatar-container:before,
+x-task div.avatar-container:after {
+  content: '';
+  display: table;
+}
+x-task div.avatar-container:after {
+  clear: both;
+}
+x-task div.avatar-container:last-child {
+  margin-right: 0%;
 }
