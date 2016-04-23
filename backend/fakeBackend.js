@@ -156,7 +156,7 @@ app.get('/task/unflame/:userId', function(req, res) {
 });
 
 app.get('/search/:searchString', function(req, res) {
-
+	res.json(data.stream);
 });
 
 
