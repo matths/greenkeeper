@@ -123,7 +123,7 @@ app.get('/task/checkin/:taskId', function(req, res) {
 app.get('/task/checkout/:userId', function(req, res) {
 	var selectedStreamitem = findStreamitemForUser(req.params.userId);
 	if (selectedStreamitem) {
-		createEvent(selectedStreamitem, "checkout" , data.users[0]);
+		createEvent(selectedStreamitem, "none" , data.users[0]);
 		res.redirect('/widget.html');
 	} else {
 		res.sendStatus(404);
