@@ -1,0 +1,39 @@
+[
+  {
+    "title": "Mein Task",
+    "event": "flame",
+    "moment": "Vor 8 Minuten",
+    "users": [
+      {
+        "avatar": "bild1.png",
+        "name": "Matthias"
+      },
+      {
+        "avatar": "bild2.png",
+        "name": "Markus"
+      }
+    ]
+  },
+  {
+    "title": "Mein Task2",
+    "event": "Checkin",
+    "last_action": "Gerade",
+    "users": [
+      {
+        "avatar": "bild1.png",
+        "name": "Matthias"
+      }
+    ]
+  },
+  {
+    "title": "Mein Task3",
+    "event": "Checkout",
+    "last_action": "Vor einer Stunde",
+    "users": [
+      {
+        "avatar": "bild1.png",
+        "name": "Matthias"
+      }
+    ]
+  }
+]
