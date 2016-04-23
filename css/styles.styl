@@ -1,17 +1,23 @@
 @import 'normalize'
 @import 'jeet'
 
+border-radius(n)
+  -webkit-border-radius n
+  -moz-border-radius n
+  border-radius n
+
 body
-  margin
-  font 12px Helvetica, Arial, sans-serif
+  font-family 'Cabin Condensed', Arial, sans-serif
+  font-size  12px
 
 header
   height 60px;
   background-color #232429;
   h1
+    text-transform uppercase
     color #78b63d
     line-height 60px
-    margin 0
+    margin 0 0 0 20px
 
 sidebar
   col(2/12, gutter: 0)
@@ -39,9 +45,15 @@ x-taskloop, x-latesttasks
   cf()
   display block
 
+x-latesttasks
+  x-task
+    padding 10px 0
+
 x-taskloop
   overflow hidden
   position relative
+  x-task
+    height 100%
 
 x-task
   cf()
@@ -61,11 +73,20 @@ x-task
       left 0
     div.text-box
       margin-left 30px
+      h2
+        color #76b729
+        margin 10px 0 0 0
+      p
+        font-size 14px
+        margin 0 0 10px 0
 
   div.avatar-container
     col(1/5 8/12, gutter: 0)
+    img
+      border-radius(5px)
   h3
     col(1/5 8/12, gutter: 0)
     position absolute
+    font-size 9px
     bottom 0
     right 0

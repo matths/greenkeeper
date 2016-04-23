@@ -177,17 +177,18 @@ th {
   padding: 0;
 }
 body {
-margin
-  font: 12px Helvetica, Arial, sans-serif;
+  font-family: 'Cabin Condensed', Arial, sans-serif;
+  font-size: 12px;
 }
 header {
   height: 60px;
   background-color: #232429;
 }
 header h1 {
+  text-transform: uppercase;
   color: #78b63d;
   line-height: 60px;
-  margin: 0;
+  margin: 0 0 0 20px;
 }
 sidebar {
   *zoom: 1;
@@ -264,9 +265,15 @@ x-taskloop:after,
 x-latesttasks:after {
   clear: both;
 }
+x-latesttasks x-task {
+  padding: 10px 0;
+}
 x-taskloop {
   overflow: hidden;
   position: relative;
+}
+x-taskloop x-task {
+  height: 100%;
 }
 x-task {
   *zoom: 1;
@@ -315,6 +322,14 @@ x-task div div.event {
 x-task div div.text-box {
   margin-left: 30px;
 }
+x-task div div.text-box h2 {
+  color: #76b729;
+  margin: 10px 0 0 0;
+}
+x-task div div.text-box p {
+  font-size: 14px;
+  margin: 0 0 10px 0;
+}
 x-task div.avatar-container {
   *zoom: 1;
   float: left;
@@ -335,6 +350,11 @@ x-task div.avatar-container:after {
 x-task div.avatar-container:last-child {
   margin-right: 0%;
 }
+x-task div.avatar-container img {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
 x-task h3 {
   *zoom: 1;
   float: left;
@@ -344,6 +364,7 @@ x-task h3 {
   margin-left: 0%;
   margin-right: 0%;
   position: absolute;
+  font-size: 9px;
   bottom: 0;
   right: 0;
 }
