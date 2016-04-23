@@ -197,7 +197,7 @@ sidebar {
   width: 16.666666666666664%;
   margin-left: 0%;
   margin-right: 0%;
-  height: 100%;
+  height: calc(100% - 60px);
   display: none;
 }
 sidebar:before,
@@ -225,9 +225,6 @@ sidebar.right {
 sidebar .badges {
   position: absolute;
   bottom: 0;
-}
-x-app {
-  margin-top: 20px;
 }
 @media only screen and (min-width: 640px) {
   x-app {
