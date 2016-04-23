@@ -105,7 +105,6 @@ xtag.register('x-usertask', {
                 }
                 else if (data.event == "flame") {
                     $('#btnunflame').css('display', 'block');
-                    alert('flame');
                 }
                 else {
                     $('#btncheckout, #btnflame').css('display', 'block');
