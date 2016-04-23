@@ -40,22 +40,6 @@
     ]
   },
   {
-    "title": "Mein Task",
-    "event": "flame",
-    "moment": "Gerade",
-    "description": "Description Description Description Description",
-    "users": [
-      {
-        "avatar": "bild1.png",
-        "name": "Matthias"
-      },
-      {
-        "avatar": "bild2.png",
-        "name": "Markus"
-      }
-    ]
-  },
-  {
     "title": "Mein Task2",
     "event": "Checkin",
     "moment": "Vor 8 Minuten",
@@ -76,22 +60,6 @@
       {
         "avatar": "bild1.png",
         "name": "Matthias"
-      }
-    ]
-  },
-  {
-    "title": "Mein Task",
-    "event": "flame",
-    "moment": "Gerade",
-    "description": "Description Description Description Description",
-    "users": [
-      {
-        "avatar": "bild1.png",
-        "name": "Matthias"
-      },
-      {
-        "avatar": "bild2.png",
-        "name": "Markus"
       }
     ]
   },

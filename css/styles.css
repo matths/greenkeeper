@@ -251,6 +251,26 @@ x-app {
     margin-right: 0%;
   }
 }
+x-taskloop,
+x-latesttasks {
+  *zoom: 1;
+  display: block;
+}
+x-taskloop:before,
+x-latesttasks:before,
+x-taskloop:after,
+x-latesttasks:after {
+  content: '';
+  display: table;
+}
+x-taskloop:after,
+x-latesttasks:after {
+  clear: both;
+}
+x-taskloop {
+  overflow: hidden;
+  position: relative;
+}
 x-task {
   *zoom: 1;
   display: block;
