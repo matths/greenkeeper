@@ -493,7 +493,8 @@ x-app.widget x-streamitem >div p {
 }
 x-app.widget x-streamitem h3 {
   position: absolute;
-  top: 5px;
+  top: 3px;
+  font-size: 10px;
 }
 x-app.widget x-streamitem div.avatar-container {
   *zoom: 1;
@@ -526,7 +527,6 @@ x-usertask {
   height: 200px;
   padding: 0 20px;
   color: #fff;
-  position: relative;
 }
 x-usertask:before,
 x-usertask:after {
@@ -535,6 +535,9 @@ x-usertask:after {
 }
 x-usertask:after {
   clear: both;
+}
+x-usertask >div {
+  position: relative;
 }
 x-usertask h2 {
   color: #78b63d;
@@ -604,7 +607,7 @@ x-usertask span {
 }
 .actions {
   position: absolute;
-  bottom: 18px;
+  bottom: 0;
   right: 10px;
 }
 x-searchmodal {
