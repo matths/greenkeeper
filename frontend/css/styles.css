@@ -344,7 +344,7 @@ x-streamitem:after {
 x-streamitem:last-child {
   border-bottom: 1px solid #000;
 }
-x-streamitem div {
+x-streamitem >div {
   *zoom: 1;
   float: left;
   clear: none;
@@ -353,32 +353,32 @@ x-streamitem div {
   margin-left: 0%;
   margin-right: 0%;
 }
-x-streamitem div:before,
-x-streamitem div:after {
+x-streamitem >div:before,
+x-streamitem >div:after {
   content: '';
   display: table;
 }
-x-streamitem div:after {
+x-streamitem >div:after {
   clear: both;
 }
-x-streamitem div:last-child {
+x-streamitem >div:last-child {
   margin-right: 0%;
 }
-x-streamitem div div.event {
+x-streamitem >div div.event {
   width: 20px;
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
 }
-x-streamitem div div.text-box {
+x-streamitem >div div.text-box {
   margin-left: 30px;
 }
-x-streamitem div div.text-box h2 {
+x-streamitem >div div.text-box h2 {
   color: #76b729;
   margin: 10px -20 0;
 }
-x-streamitem div div.text-box p {
+x-streamitem >div div.text-box p {
   font-size: 14px;
   margin: 0 0 10px 0;
 }
@@ -444,11 +444,72 @@ div.company h2 {
 div.company p {
   color: #fff;
 }
+x-app.widget x-streamitem {
+  position: relative;
+}
+x-app.widget x-streamitem >div {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: 0%;
+}
+x-app.widget x-streamitem >div:before,
+x-app.widget x-streamitem >div:after {
+  content: '';
+  display: table;
+}
+x-app.widget x-streamitem >div:after {
+  clear: both;
+}
+x-app.widget x-streamitem >div:last-child {
+  margin-right: 0%;
+}
+x-app.widget x-streamitem >div h2 {
+  margin: 10px 90px 10px 0;
+  font-size: 13px;
+}
+x-app.widget x-streamitem >div p {
+  font-size: 13px;
+}
+x-app.widget x-streamitem h3 {
+  position: absolute;
+  top: 5px;
+}
+x-app.widget x-streamitem div.avatar-container {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: 0%;
+  margin-left: 30px;
+}
+x-app.widget x-streamitem div.avatar-container:before,
+x-app.widget x-streamitem div.avatar-container:after {
+  content: '';
+  display: table;
+}
+x-app.widget x-streamitem div.avatar-container:after {
+  clear: both;
+}
+x-app.widget x-streamitem div.avatar-container:last-child {
+  margin-right: 0%;
+}
+x-app.widget x-streamitem div.avatar-container img {
+  margin-right: 10px;
+}
 x-usertask {
   *zoom: 1;
   display: block;
   background-color: #30323d;
   height: 200px;
+  padding: 0 20px;
+  color: #fff;
+  position: relative;
 }
 x-usertask:before,
 x-usertask:after {
@@ -460,6 +521,15 @@ x-usertask:after {
 }
 x-usertask h2 {
   color: #78b63d;
+}
+x-usertask img {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+x-usertask span {
+  margin-top: 20px;
+  float: right;
 }
 #btnflame {
   background-image: url("../img/btn-problem.png");
@@ -513,6 +583,12 @@ x-usertask h2 {
 #btncheckout,
 #btnunflame {
   display: none;
+  margin-right: 10px;
+}
+.actions {
+  position: absolute;
+  bottom: 18px;
+  right: 10px;
 }
 x-searchmodal {
   *zoom: 1;
@@ -522,6 +598,7 @@ x-searchmodal {
   top: 60px;
   width: 100%;
   border-bottom: 1px solid #000;
+  z-index: 10;
 }
 x-searchmodal:before,
 x-searchmodal:after {
@@ -530,4 +607,28 @@ x-searchmodal:after {
 }
 x-searchmodal:after {
   clear: both;
+}
+x-searchmodal form {
+  margin: 0;
+}
+x-searchmodal input.searchstring {
+  width: 70%;
+  margin: 15px 10px;
+  background: #78b63d no-repeat url("../img/lupe.png") 5px;
+  background-size: 20px 20px;
+  border: none;
+  padding: 8px 30px;
+  font-size: 14px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+x-searchmodal input.submit {
+  width: 20%;
+  margin-left: 7px;
+  font-size: 14px;
+  padding: 6px 0 7px 0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }

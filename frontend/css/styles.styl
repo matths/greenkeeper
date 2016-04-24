@@ -130,14 +130,12 @@ x-streamitem
       p
         font-size 14px
         margin 0 0 10px 0
-
   div.avatar-container
     col(1/5 8/12, gutter: 0)
     img
       width 50px
       height 50px
       border-radius(5px)
-
   h3
     col(1/5 8/12, gutter: 0)
     position absolute
@@ -145,6 +143,7 @@ x-streamitem
     bottom 0
     right 10px
     text-align right
+
 div.company
   padding-left 15px
   h2
@@ -153,20 +152,23 @@ div.company
   p
     color #ffffff
 
-
-    
-
 x-app.widget x-streamitem
   position relative
   >div
     col(5/5 8/12, gutter: 0)
     h2
       margin 10px 90px 10px 0
+      font-size: 13px;
+    p
+      font-size: 13px;
   h3
     position absolute
-    top 9px
+    top 5px
   div.avatar-container
     col(5/5 8/12, gutter: 0)
+    margin-left 30px
+    img
+      margin-right 10px
 
 x-usertask
   cf()
@@ -240,4 +242,21 @@ x-searchmodal
   top 60px
   width 100%
   border-bottom 1px solid #000
-  display none
+  z-index 10
+  form
+    margin 0
+  input.searchstring
+    width: 70%;
+    margin: 15px 10px
+    background: #78b63d no-repeat url("../img/lupe.png") 5px;
+    background-size: 20px 20px;
+    border: none;
+    padding: 8px 30px;
+    font-size: 14px
+    border-radius(5px)
+  input.submit
+    width: 20%;
+    margin-left: 7px;
+    font-size 14px
+    padding: 6px 0 7px 0;
+    border-radius(5px)

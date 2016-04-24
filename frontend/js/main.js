@@ -142,6 +142,7 @@ xtag.register('x-searchmodal', {
             this.xtag.searchForm = this.querySelector('form');
             this.xtag.searchInput = this.querySelector('input');
             var self = this;
+            self.xtag.searchmodal.slideToggle("slow");
             $('#btnsearch').click(function() {
                 self.xtag.searchmodal.slideToggle();
             });
@@ -174,7 +175,7 @@ xtag.register('x-app', {
             });
         },
         initSlider: function (self) {
-            var itemsToShow = $(document).width() > 1024 ? 6 : 4;
+            var itemsToShow = $(document).width() > 1024 ? 6 : 3;
             self.xtag.taskloop.css("height", 0 + "px");
             var height = $(document).height() - $('header').height() - self.xtag.latesttasks.height() - self.xtag.usertask.height() - $('.x-app>h2').outerHeight(true);
             var itemHeight = parseInt((height + 0.5) / itemsToShow);
