@@ -1,11 +1,14 @@
+var moment = require('moment');
 var express = require('express');
 var app = express();
-
-var moment = require('moment');
 
 app.use(express.static('../frontend'));
 
 var data = require('./mocked_data.js'); // global in memory database with prefilled data ;)
+
+var streamitems = require('./data/streamitems.js');
+var tasks = require('./data/tasks.js');
+var users = require('./data/users.js');
 
 function guid() {
   function s4() {
@@ -85,8 +88,56 @@ app.use('/*', function (req, res, next) {
 	next();
 });
 
+var userId = "cb5847ff-ee2b-e860-7bdd-e6ce96481e74";
+
+// STREAMITEMS
+app.get('/stream', function(req, res) {
+	streamitems.getAllStreamItems(function (streamArr) {
+		res.json(streamArr);
+	});
+});
+
+// TASKS
 app.get('/tasks', function(req, res) {
-	res.json(data.tasks);
+	tasks.getAllTasks(function (tasksArr) {
+		res.json(tasksArr);
+	});
+});
+
+app.get('/task/checkin/:taskId', function(req, res) {
+	stream.createItem(req.params.taskId, userId, "checkin", function () {
+		res.redirect('/widget.html');
+	});
+});
+
+app.get('/task/checkout/:userId', function(req, res) {
+	var selectedStreamitem = findStreamitemForUser(req.params.userId);
+	if (selectedStreamitem) {
+		createEvent(selectedStreamitem, "checkout" , data.users[0]);
+		res.redirect('/tasks.html');
+	} else {
+		res.sendStatus(404);
+	}
+});
+
+app.get('/task/flame/:userId', function(req, res) {
+	var selectedStreamitem = findStreamitemForUser(req.params.userId);
+	if (selectedStreamitem) {
+		createEvent(selectedStreamitem, "flame" , data.users[0]);
+		res.redirect('/widget.html');
+	} else {
+		res.sendStatus(404);
+	}
+});
+
+app.get('/task/unflame/:userId', function(req, res) {
+	var selectedStreamitem = findStreamitemForUser(req.params.userId);
+	if (selectedStreamitem) {
+		createEvent(selectedStreamitem, "checkin" , data.users[0]);
+		res.redirect('/widget.html');
+	} else {
+		res.sendStatus(404);
+	}
 });
 
 app.get('/currentStreamItem/:userId', function(req, res) {
@@ -107,51 +158,6 @@ app.get('/currentStreamItem/:userId', function(req, res) {
 		} else {
 			res.sendStatus(404);
 		}
-	}
-});
-
-
-app.get('/task/checkin/:taskId', function(req, res) {
-	var selectedTask = findTask(req.params.taskId);
-	if (selectedTask) {
-		createEvent(selectedTask, "checkin" , data.users[0]);
-		res.redirect('/widget.html');
-	} else {
-		res.sendStatus(404);
-	}
-});
-
-app.get('/task/checkout/:userId', function(req, res) {
-	var selectedStreamitem = findStreamitemForUser(req.params.userId);
-	if (selectedStreamitem) {
-		createEvent(selectedStreamitem, "checkout" , data.users[0]);
-		res.redirect('/tasks.html');
-	} else {
-		res.sendStatus(404);
-	}
-});
-
-app.get('/stream', function(req, res) {
-	res.json(data.stream);
-});
-
-app.get('/task/flame/:userId', function(req, res) {
-	var selectedStreamitem = findStreamitemForUser(req.params.userId);
-	if (selectedStreamitem) {
-		createEvent(selectedStreamitem, "flame" , data.users[0]);
-		res.redirect('/widget.html');
-	} else {
-		res.sendStatus(404);
-	}
-});
-
-app.get('/task/unflame/:userId', function(req, res) {
-	var selectedStreamitem = findStreamitemForUser(req.params.userId);
-	if (selectedStreamitem) {
-		createEvent(selectedStreamitem, "checkin" , data.users[0]);
-		res.redirect('/widget.html');
-	} else {
-		res.sendStatus(404);
 	}
 });
 
