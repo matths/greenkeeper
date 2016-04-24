@@ -8,7 +8,7 @@ xtag.register('x-avatar', {
 });
 
 xtag.register('x-task', {
-    content: "<div><a href=''><h2></h2><p></p><h3></h3></a></div>",
+    content: "<div><a href=''><h2></h2><p></p><h3></h3><button class='action' id='btncheckin'></button></a></div>",
     lifecycle: {
         created: function () {
             this.xtag.link = this.querySelector('a');
