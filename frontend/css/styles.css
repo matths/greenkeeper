@@ -200,6 +200,35 @@ header h1 {
     margin: 0 0 0 20px;
   }
 }
+header .search {
+  border: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 14.166666666666664%;
+  margin-left: 0%;
+  margin-right: 3%;
+  float: right;
+  margin: 20px 20px 0 0;
+  font-size: 20px;
+  background: #78b63d url("../img/lupe.png") no-repeat 2px 3px;
+  background-size: 20px 20px;
+}
+header .search:before,
+header .search:after {
+  content: '';
+  display: table;
+}
+header .search:after {
+  clear: both;
+}
+header .search:last-child {
+  margin-right: 0%;
+}
 header img.logo {
   margin: 18px 0 0 18px;
   width: 60%;
@@ -250,21 +279,28 @@ sidebar.left .division {
 }
 sidebar.left .division h3 {
   color: #78b63d;
-  margin: 10px 0 0 40px;
+  margin: 10px 0 0 30px;
   font-size: 12px;
 }
 sidebar.left .division p {
   color: #fff;
-  margin: 0 0 0 40px;
+  margin: 0 0 0 30px;
 }
 sidebar.right {
   background-color: #d5dadd;
 }
-sidebar.right .taskCounter {
+sidebar.right div {
   position: relative;
   top: 20px;
   left: 50px;
   font-size: 50px;
+  color: #666;
+}
+sidebar.right div .taskCounter {
+  position: absolute;
+  top: 0%;
+  left: 16%;
+  font-size: 38px;
   color: #666;
 }
 sidebar img {
@@ -346,7 +382,7 @@ x-taskloop x-streamitem {
 x-streamitem {
   *zoom: 1;
   display: block;
-  border-top: 1px solid #000;
+  border-top: 1px solid #999;
   position: relative;
 }
 x-streamitem:before,
@@ -358,7 +394,7 @@ x-streamitem:after {
   clear: both;
 }
 x-streamitem:last-child {
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #999;
 }
 x-streamitem >div {
   *zoom: 1;
