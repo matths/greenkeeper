@@ -23,6 +23,9 @@ header
     color #78b63d
     line-height 60px
     margin 0 0 0 70px
+  img.logo
+    margin 18px 0 0 18px
+    width 60%
 
 sidebar
   col(2/12, gutter: 0)
@@ -31,12 +34,43 @@ sidebar
 
   &.left
     background-color #2f313c
+    
+    .wall
+      h2
+        color #78b63d
+        margin 10px 0 0 20px
+        text-transform uppercase
+
+    .company
+      margin-top 30px
+      border-left 5px solid #78b63d
+      
+      h2
+        margin 5px 0 0 0
+
+      p
+        margin 2px 0 5px 0
+        
+    .division
+      margin 10px 20px 10px 15px
+      border-top 1px solid #666666
+      
+      h3
+        color #78b63d
+        margin 10px 0 0 40px
+        font-size 12px
+        
+      p
+        color #ffffff
+        margin 0 0 0 40px
 
   &.right
     background-color #d5dadd
     
   img
     border-radius(5px)
+    margin-left 15px
+    margin-top 15px
 
   @media only screen and (min-width: 640px)
     display block
@@ -44,10 +78,19 @@ sidebar
   .badges
     position absolute;
     bottom 0
+    padding-left 15px 
+  .badges h2
+      font-weight normal
+      color #76b729
+ 
 
 x-app
   @media only screen and (min-width: 640px)
     col(8/12, gutter: 0)
+
+.x-app h2
+  padding-left 20px
+  
 
 x-taskloop, x-latesttasks
   cf()
@@ -83,7 +126,7 @@ x-streamitem
       margin-left 30px
       h2
         color #76b729
-        margin 10px 0 0 0
+        margin 10px -20 0
       p
         font-size 14px
         margin 0 0 10px 0
@@ -91,7 +134,10 @@ x-streamitem
   div.avatar-container
     col(1/5 8/12, gutter: 0)
     img
+      width 50px
+      height 50px
       border-radius(5px)
+
   h3
     col(1/5 8/12, gutter: 0)
     position absolute
@@ -99,6 +145,16 @@ x-streamitem
     bottom 0
     right 10px
     text-align right
+div.company
+  padding-left 15px
+  h2
+    font-weight normal
+    color #76b729
+  p
+    color #ffffff
+
+
+    
 
 x-app.widget x-streamitem
   position relative
