@@ -206,7 +206,7 @@ xtag.register('x-app', {
                 el.attr('event', value.event);
                 el.get(0).buildUsers(value.users);
 
-                if (value.event == "flame" && self.xtag.latesttasks != null) {
+                if (value.event == "flame" && self.xtag.latesttasks.length != 0) {
                     self.xtag.latesttasks.append(el);
                 } else {
                     var el = $("<div></div>").append(el);
