@@ -23,6 +23,8 @@ header
     color #78b63d
     line-height 60px
     margin 0 0 0 70px
+    @media only screen and (min-width: 640px)
+      margin 0 0 0 20px
   img.logo
     margin 18px 0 0 18px
     width 60%
@@ -67,6 +69,13 @@ sidebar
   &.right
     background-color #d5dadd
     
+    .taskCounter
+      position relative
+      top 20px
+      left 50px
+      font-size 50px
+      color: #666666
+
   img
     border-radius(5px)
     margin-left 15px
@@ -91,6 +100,8 @@ x-app
 .x-app h2
   padding-left 20px
   
+.x-app h2.latestEvents
+  padding-left 30px
 
 x-taskloop, x-latesttasks
   cf()
@@ -103,6 +114,7 @@ x-latesttasks
 x-taskloop
   overflow hidden
   position relative
+  margin-top -1px
   x-streamitem
     height 100%
 
@@ -133,14 +145,16 @@ x-streamitem
   div.avatar-container
     col(1/5 8/12, gutter: 0)
     img
-      width 50px
-      height 50px
+      width 55px
+      height 55px
       border-radius(5px)
+      margin 20px 5px 0 0
+
   h3
     col(1/5 8/12, gutter: 0)
     position absolute
-    font-size 9px
-    bottom 0
+    font-size 13px
+    bottom 10px
     right 10px
     text-align right
 
