@@ -192,9 +192,9 @@ xtag.register('x-app', {
                     vertical: true,
                     infinite: true,
                     autoplay: true,
-                    autoplaySpeed: 2000,
+                    autoplaySpeed: 4000,
                     arrows: false,
-                    pauseOnHover: false
+                    pauseOnHover: false,
                 });
             }
         },
