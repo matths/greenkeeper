@@ -175,28 +175,28 @@ var _tasks = [
     client: "Redaktion"
   },
   {
-    "id": "fb5e630d-8f6d-8123-90f3-0093759ade58",
+    "id": "942d7edd-5dfb-bd51-37fb-470878f5341a",
     title: "Relaunch Website",
     description: "Responsive Website inkl. Slideshow von Bildergalerien",
     project: "Relaunch",
     client: "Team Online"
   },
   {
-    "id": "fb5e630d-8f6d-8123-90f3-0093759ade58",
+    "id": "c5ed062d-ff41-0e09-cbad-4b006ecfe4fe",
     title: "Mobile Upload",
     description: "App für mobile Reporter entwickeln - Material von unterwegs direkt hochladen",
     project: "Mobile",
     client: "Redaktion"
   },
   {
-    "id": "fb5e630d-8f6d-8123-90f3-0093759ade58",
+    "id": "50e5942c-30c7-cb22-246c-366531202f19",
     title: "Neues Logo",
     description: "Neues Logo für neue Videoserie mit Luftaufnahmen entwickeln",
     project: "Luftaufnahmen",
     client: "Redaktion"
   },
   {
-    "id": "fb5e630d-8f6d-8123-90f3-0093759ade58",
+    "id": "cacde01c-bf01-79d0-b8af-bd8d5dd15e4b",
     title: "Leserbilder der Woche",
     description: "Neue Sonderseite online entwickeln mit Bildergalerie Leserfotos und Slideshow",
     project: "Leserfotos",
