@@ -52,7 +52,7 @@ function findUser(userId) {
 function updateStreamTimes() {
 	data.stream.map(function (value, index) {
 		if (value.timestamp) {
-			value.moment = moment(value.timestamp).fromNow();
+			value.moment = moment(value.timestamp).lang("de").fromNow();
 		}
 	});
 }
