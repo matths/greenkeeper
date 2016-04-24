@@ -175,7 +175,7 @@ xtag.register('x-app', {
             });
         },
         initSlider: function (self) {
-            var itemsToShow = $(document).width() > 1024 ? 6 : 3;
+            var itemsToShow = $(document).width() > 1024 ? 6 : 2;
             self.xtag.taskloop.css("height", 0 + "px");
             var height = $(document).height() - $('header').height() - self.xtag.latesttasks.height() - self.xtag.usertask.height() - $('.x-app>h2').outerHeight(true);
             var itemHeight = parseInt((height + 0.5) / itemsToShow);
