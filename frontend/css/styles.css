@@ -395,6 +395,7 @@ x-usertask {
   display: block;
   background-color: #30323d;
   height: 200px;
+  padding: 0 20px;
 }
 x-usertask:before,
 x-usertask:after {
@@ -468,6 +469,7 @@ x-searchmodal {
   top: 60px;
   width: 100%;
   border-bottom: 1px solid #000;
+  display: none;
 }
 x-searchmodal:before,
 x-searchmodal:after {
