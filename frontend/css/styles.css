@@ -291,8 +291,8 @@ sidebar.right {
 }
 sidebar.right div {
   position: relative;
-  top: 20px;
-  left: 50px;
+  top: 15px;
+  left: -5px;
   font-size: 50px;
   color: #666;
 }
