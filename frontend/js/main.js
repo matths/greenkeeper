@@ -94,7 +94,7 @@ xtag.register('x-usertask', {
     methods: {
         initialFetch: function () {
             var self = this;
-            $.getJSON("http://lizu.net:5000/currentStreamItem/cb5847ff-ee2b-e860-7bdd-e6ce96481e74", function(data) {
+            $.getJSON("http://lizu.net:5000/currentStreamItem/cb5847ff-ee2b-e860-7bdd-e6ce96481e74", function (data) {
                 self.xtag.title.textContent = data.title;
                 self.xtag.moment.textContent = data.moment;
                 self.xtag.description.textContent = data.description;
@@ -143,7 +143,7 @@ xtag.register('x-searchmodal', {
             this.xtag.searchInput = this.querySelector('input');
             var self = this;
             self.xtag.searchmodal.slideToggle("slow");
-            $('#btnsearch').click(function() {
+            $('#btnsearch').click(function () {
                 self.xtag.searchmodal.slideToggle();
             });
             $(this.xtag.searchForm).submit(function (e) {
@@ -175,17 +175,19 @@ xtag.register('x-app', {
             });
         },
         initSlider: function (self) {
-            var itemsToShow = $(document).width() > 1024 ? 6 : 3;
+            var self = this;
+            var items = $('x-streamitem', this.xtag.latesttasks).length;
+            self.xtag.itemsToShow = $(document).width() > 1024 ? 7 - items : 3;
             self.xtag.taskloop.css("height", 0 + "px");
             var height = $(document).height() - $('header').height() - self.xtag.latesttasks.height() - self.xtag.usertask.height() - $('.x-app>h2').outerHeight(true);
-            var itemHeight = parseInt((height + 0.5) / itemsToShow);
+            var itemHeight = parseInt((height + 0.5) / self.xtag.itemsToShow);
             $(">div", self.xtag.taskloop).css("height", itemHeight + "px");
             $(">div", self.xtag.taskloop).css("overflow", "hidden");
-            height = itemHeight * itemsToShow;
+            height = itemHeight * self.xtag.itemsToShow;
             self.xtag.taskloop.css("height", height + "px");
             if (typeof self.xtag.taskloop.slick != "undefined") {
                 self.xtag.taskloop.slick({
-                    slidesToShow: itemsToShow,
+                    slidesToShow: self.xtag.itemsToShow,
                     slidesToScroll: 1,
                     vertical: true,
                     infinite: true,
@@ -196,7 +198,7 @@ xtag.register('x-app', {
                 });
             }
         },
-        fillTasks: function(data) {
+        fillTasks: function (data) {
             var self = this;
             $.each(data, function (key, value) {
                 var el = $('<x-streamitem></x-streamitem>');
