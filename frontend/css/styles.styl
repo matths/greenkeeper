@@ -71,7 +71,7 @@ x-streamitem
   &:last-child
     border-bottom 1px solid #000
 
-  div
+  >div
     col(3/5 8/12, gutter: 0)
     div.event
       width: 20px
@@ -100,15 +100,33 @@ x-streamitem
     right 10px
     text-align right
 
+x-app.widget x-streamitem
+  position relative
+  >div
+    col(5/5 8/12, gutter: 0)
+    h2
+      margin 10px 90px 10px 0
+  h3
+    position absolute
+    top 9px
+  div.avatar-container
+    col(5/5 8/12, gutter: 0)
+
 x-usertask
   cf()
   display block
   background-color #30323d
   height 200px
   padding 0 20px
+  color #FFF
+  position relative
   h2
     color #78b63d
-
+  img
+    border-radius(5px)
+  span
+    margin-top 20px
+    float right
 
 #btnflame
   background-image url("../img/btn-problem.png")
@@ -151,6 +169,12 @@ x-usertask
 
 #btnflame, #btncheckin, #btncheckout, #btnunflame
   display none
+  margin-right 10px
+
+.actions
+  position absolute
+  bottom 18px
+  right 10px
 
 x-searchmodal
   cf()
