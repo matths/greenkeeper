@@ -173,6 +173,34 @@ var _tasks = [
     description: "Entwicklung von einer einfachen Möglichkeit Fotos hochzuladen",
     project: "Fotos",
     client: "Redaktion"
+  },
+  {
+    "id": "fb5e630d-8f6d-8123-90f3-0093759ade58",
+    title: "Relaunch Website",
+    description: "Responsive Website inkl. Slideshow von Bildergalerien",
+    project: "Relaunch",
+    client: "Team Online"
+  },
+  {
+    "id": "fb5e630d-8f6d-8123-90f3-0093759ade58",
+    title: "Mobile Upload",
+    description: "App für mobile Reporter entwickeln - Material von unterwegs direkt hochladen",
+    project: "Mobile",
+    client: "Redaktion"
+  },
+  {
+    "id": "fb5e630d-8f6d-8123-90f3-0093759ade58",
+    title: "Neues Logo",
+    description: "Neues Logo für neue Videoserie mit Luftaufnahmen entwickeln",
+    project: "Luftaufnahmen",
+    client: "Redaktion"
+  },
+  {
+    "id": "fb5e630d-8f6d-8123-90f3-0093759ade58",
+    title: "Leserbilder der Woche",
+    description: "Neue Sonderseite online entwickeln mit Bildergalerie Leserfotos und Slideshow",
+    project: "Leserfotos",
+    client: "Redaktion"
   }
 ];
 
