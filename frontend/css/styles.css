@@ -224,6 +224,34 @@ sidebar:last-child {
 sidebar.left {
   background-color: #2f313c;
 }
+sidebar.left .wall h2 {
+  color: #78b63d;
+  margin: 10px 0 0 20px;
+  text-transform: uppercase;
+}
+sidebar.left .company {
+  margin-top: 30px;
+  border-left: 5px solid #78b63d;
+}
+sidebar.left .company h2 {
+  margin: 5px 0 0 0;
+}
+sidebar.left .company p {
+  margin: 2px 0 5px 0;
+}
+sidebar.left .division {
+  margin: 10px 20px 10px 15px;
+  border-top: 1px solid #666;
+}
+sidebar.left .division h3 {
+  color: #78b63d;
+  margin: 10px 0 0 40px;
+  font-size: 12px;
+}
+sidebar.left .division p {
+  color: #fff;
+  margin: 0 0 0 40px;
+}
 sidebar.right {
   background-color: #d5dadd;
 }
@@ -375,6 +403,8 @@ x-streamitem div.avatar-container:last-child {
   margin-right: 0%;
 }
 x-streamitem div.avatar-container img {
+  width: 50px;
+  height: 50px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
