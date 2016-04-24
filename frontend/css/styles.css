@@ -581,7 +581,7 @@ x-app.widget x-streamitem div.avatar-container:last-child {
   margin-right: 0%;
 }
 x-app.widget x-streamitem div.avatar-container img {
-  margin-right: 10px;
+  margin: 0px 10px 0 0;
 }
 x-usertask {
   *zoom: 1;
