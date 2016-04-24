@@ -142,6 +142,7 @@ xtag.register('x-searchmodal', {
             this.xtag.searchForm = this.querySelector('form');
             this.xtag.searchInput = this.querySelector('input');
             var self = this;
+            self.xtag.searchmodal.slideToggle("slow");
             $('#btnsearch').click(function() {
                 self.xtag.searchmodal.slideToggle();
             });
@@ -161,6 +162,7 @@ xtag.register('x-app', {
             this.xtag.app = this;
             this.xtag.latesttasks = $(this.querySelector('x-latesttasks'));
             this.xtag.taskloop = $(this.querySelector('x-taskloop'));
+            this.xtag.usertask = $(this.querySelector('x-usertask'));
             this.initialFetch();
         }
     },
@@ -170,13 +172,12 @@ xtag.register('x-app', {
             // $.getJSON("http://127.0.0.1:8000/frontend/api.json", function (data) {
             $.getJSON("http://lizu.net:5000/stream", function (data) {
                 self.fillTasks(data);
-                self.initSlider(self);
             });
         },
         initSlider: function (self) {
-            var itemsToShow = $(document).width() > 1024 ? 6 : 4;
+            var itemsToShow = $(document).width() > 1024 ? 6 : 3;
             self.xtag.taskloop.css("height", 0 + "px");
-            var height = $(document).height() - $('header').height() - self.xtag.latesttasks.height() - $('.x-app>h2').outerHeight(true);
+            var height = $(document).height() - $('header').height() - self.xtag.latesttasks.height() - self.xtag.usertask.height() - $('.x-app>h2').outerHeight(true);
             var itemHeight = parseInt((height + 0.5) / itemsToShow);
             $(">div", self.xtag.taskloop).css("height", itemHeight + "px");
             $(">div", self.xtag.taskloop).css("overflow", "hidden");
@@ -212,6 +213,7 @@ xtag.register('x-app', {
                     self.xtag.taskloop.append(el);
                 }
             });
+            self.initSlider(self);
         }
     }
 });
