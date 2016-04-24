@@ -135,13 +135,12 @@ x-taskloop
   x-streamitem
     height 100%
 
-x-streamitem
+x-streamitem, x-task
   cf()
   display block
-  border-top 1px solid #999
   position relative
-  &:last-child
-    border-bottom 1px solid #999
+  border-top 1px solid #999
+  background-color #FFF
 
   >div
     col(3/5 8/12, gutter: 0)
@@ -217,6 +216,8 @@ x-usertask
   span
     margin-top 20px
     float right
+    max-width: 80px;
+    text-align: right;
 
 #btnflame
   background-image url("../img/btn-problem.png")
@@ -264,7 +265,7 @@ x-usertask
 .actions
   position absolute
   bottom 0
-  right 10px
+  right: -10px;
 
 x-searchmodal
   cf()
@@ -292,3 +293,39 @@ x-searchmodal
     font-size 14px
     padding: 6px 0 7px 0;
     border-radius(5px)
+
+x-task
+  cf()
+  display block
+  padding 0 20px
+  position relative
+  >div
+    width 100%
+  a
+    color #30323d
+    text-decoration none
+  h2
+    color #78b63d
+  h3
+    position relative
+    display block
+    bottom auto
+    right auto
+    text-align left
+    width 100%
+    margin-top 0
+  p
+    margin 0 50px 13px 0
+  #btncheckin
+    display block
+    position absolute
+    top 50%
+    right 0
+    margin-top -20px
+
+footer
+  position absolute
+  bottom 0
+  width 100%
+  height 40px
+  background-color #232429

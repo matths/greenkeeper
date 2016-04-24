@@ -379,24 +379,27 @@ x-taskloop {
 x-taskloop x-streamitem {
   height: 100%;
 }
-x-streamitem {
+x-streamitem,
+x-task {
   *zoom: 1;
   display: block;
-  border-top: 1px solid #999;
   position: relative;
+  border-top: 1px solid #999;
+  background-color: #fff;
 }
 x-streamitem:before,
-x-streamitem:after {
+x-task:before,
+x-streamitem:after,
+x-task:after {
   content: '';
   display: table;
 }
-x-streamitem:after {
+x-streamitem:after,
+x-task:after {
   clear: both;
 }
-x-streamitem:last-child {
-  border-bottom: 1px solid #999;
-}
-x-streamitem >div {
+x-streamitem >div,
+x-task >div {
   *zoom: 1;
   float: left;
   clear: none;
@@ -406,35 +409,44 @@ x-streamitem >div {
   margin-right: 0%;
 }
 x-streamitem >div:before,
-x-streamitem >div:after {
+x-task >div:before,
+x-streamitem >div:after,
+x-task >div:after {
   content: '';
   display: table;
 }
-x-streamitem >div:after {
+x-streamitem >div:after,
+x-task >div:after {
   clear: both;
 }
-x-streamitem >div:last-child {
+x-streamitem >div:last-child,
+x-task >div:last-child {
   margin-right: 0%;
 }
-x-streamitem >div div.event {
+x-streamitem >div div.event,
+x-task >div div.event {
   width: 20px;
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
 }
-x-streamitem >div div.text-box {
+x-streamitem >div div.text-box,
+x-task >div div.text-box {
   margin-left: 30px;
 }
-x-streamitem >div div.text-box h2 {
+x-streamitem >div div.text-box h2,
+x-task >div div.text-box h2 {
   color: #76b729;
   margin: 10px -20 0;
 }
-x-streamitem >div div.text-box p {
+x-streamitem >div div.text-box p,
+x-task >div div.text-box p {
   font-size: 14px;
   margin: 0 0 10px 0;
 }
-x-streamitem div.avatar-container {
+x-streamitem div.avatar-container,
+x-task div.avatar-container {
   *zoom: 1;
   float: left;
   clear: none;
@@ -444,17 +456,22 @@ x-streamitem div.avatar-container {
   margin-right: 0%;
 }
 x-streamitem div.avatar-container:before,
-x-streamitem div.avatar-container:after {
+x-task div.avatar-container:before,
+x-streamitem div.avatar-container:after,
+x-task div.avatar-container:after {
   content: '';
   display: table;
 }
-x-streamitem div.avatar-container:after {
+x-streamitem div.avatar-container:after,
+x-task div.avatar-container:after {
   clear: both;
 }
-x-streamitem div.avatar-container:last-child {
+x-streamitem div.avatar-container:last-child,
+x-task div.avatar-container:last-child {
   margin-right: 0%;
 }
-x-streamitem div.avatar-container img {
+x-streamitem div.avatar-container img,
+x-task div.avatar-container img {
   width: 55px;
   height: 55px;
   -webkit-border-radius: 5px;
@@ -462,7 +479,8 @@ x-streamitem div.avatar-container img {
   border-radius: 5px;
   margin: 20px 5px 0 0;
 }
-x-streamitem h3 {
+x-streamitem h3,
+x-task h3 {
   *zoom: 1;
   float: left;
   clear: none;
@@ -477,14 +495,18 @@ x-streamitem h3 {
   text-align: right;
 }
 x-streamitem h3:before,
-x-streamitem h3:after {
+x-task h3:before,
+x-streamitem h3:after,
+x-task h3:after {
   content: '';
   display: table;
 }
-x-streamitem h3:after {
+x-streamitem h3:after,
+x-task h3:after {
   clear: both;
 }
-x-streamitem h3:last-child {
+x-streamitem h3:last-child,
+x-task h3:last-child {
   margin-right: 0%;
 }
 div.company {
@@ -586,6 +608,8 @@ x-usertask img {
 x-usertask span {
   margin-top: 20px;
   float: right;
+  max-width: 80px;
+  text-align: right;
 }
 #btnflame {
   background-image: url("../img/btn-problem.png");
@@ -644,7 +668,7 @@ x-usertask span {
 .actions {
   position: absolute;
   bottom: 0;
-  right: 10px;
+  right: -10px;
 }
 x-searchmodal {
   *zoom: 1;
@@ -687,4 +711,54 @@ x-searchmodal input.submit {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+}
+x-task {
+  *zoom: 1;
+  display: block;
+  padding: 0 20px;
+  position: relative;
+}
+x-task:before,
+x-task:after {
+  content: '';
+  display: table;
+}
+x-task:after {
+  clear: both;
+}
+x-task >div {
+  width: 100%;
+}
+x-task a {
+  color: #30323d;
+  text-decoration: none;
+}
+x-task h2 {
+  color: #78b63d;
+}
+x-task h3 {
+  position: relative;
+  display: block;
+  bottom: auto;
+  right: auto;
+  text-align: left;
+  width: 100%;
+  margin-top: 0;
+}
+x-task p {
+  margin: 0 50px 13px 0;
+}
+x-task #btncheckin {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -20px;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background-color: #232429;
 }
