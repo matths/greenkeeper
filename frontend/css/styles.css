@@ -548,11 +548,16 @@ x-app.widget x-streamitem >div h2 {
 }
 x-app.widget x-streamitem >div p {
   font-size: 13px;
+  text-overflow: ellipsis;
+  margin-right: 20px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 x-app.widget x-streamitem h3 {
   position: absolute;
-  top: 3px;
+  top: -3px;
   font-size: 10px;
+  right: 20px;
 }
 x-app.widget x-streamitem div.avatar-container {
   *zoom: 1;
@@ -582,7 +587,7 @@ x-usertask {
   *zoom: 1;
   display: block;
   background-color: #30323d;
-  height: 200px;
+  height: 170px;
   padding: 0 20px;
   color: #fff;
 }
@@ -604,9 +609,10 @@ x-usertask img {
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
+  height: 80px;
 }
 x-usertask span {
-  margin-top: 20px;
+  margin-top: 11px;
   float: right;
   max-width: 80px;
   text-align: right;
