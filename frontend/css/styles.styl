@@ -25,6 +25,16 @@ header
     margin 0 0 0 70px
     @media only screen and (min-width: 640px)
       margin 0 0 0 20px
+  .search
+    border none
+    border-radius(5px)
+    col(1/6)
+    float right
+    margin 20px 20px 0 0
+    font-size 20px
+    background #78b63d url("../img/lupe.png") no-repeat 2px 3px
+    background-size 20px 20px
+
   img.logo
     margin 18px 0 0 18px
     width 60%
@@ -59,22 +69,29 @@ sidebar
       
       h3
         color #78b63d
-        margin 10px 0 0 40px
+        margin 10px 0 0 30px
         font-size 12px
         
       p
         color #ffffff
-        margin 0 0 0 40px
+        margin 0 0 0 30px
 
   &.right
     background-color #d5dadd
     
-    .taskCounter
+    div
       position relative
-      top 20px
-      left 50px
+      top 15px
+      left -5px
       font-size 50px
       color: #666666
+
+      .taskCounter
+        position absolute
+        top 0%
+        left 16%
+        font-size 38px
+        color: #666666
 
   img
     border-radius(5px)
@@ -121,10 +138,10 @@ x-taskloop
 x-streamitem
   cf()
   display block
-  border-top 1px solid #000
+  border-top 1px solid #999
   position relative
   &:last-child
-    border-bottom 1px solid #000
+    border-bottom 1px solid #999
 
   >div
     col(3/5 8/12, gutter: 0)
