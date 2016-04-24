@@ -112,8 +112,8 @@ var _stream = [
     "users": [
       {
         "id": "na",
-        "avatar": "wolfgang.png",
-        "name": "Wolfgang"
+        avatar: "matthias.png",
+        name: "Matthias"
       },
       {
         "id": "na",
@@ -179,8 +179,8 @@ var _tasks = [
 var _users = [
   {
     id: "cb5847ff-ee2b-e860-7bdd-e6ce96481e74",
-    avatar: "matthias.png",
-    name: "Matthias"
+    "avatar": "wolfgang.png",
+    "name": "Wolfgang"
   }
 ];
 
